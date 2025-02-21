@@ -1,0 +1,25 @@
+\documentclass[a4paper,12pt]{report} % or "book" if preferred
+
+\input{preamble} % Loads settings from preamble.tex
+
+\begin{document}
+
+\include{coverPage} % Cover page
+
+\include{abstract} % Abstract section
+
+\tableofcontents % Generates the Table of Contents
+
+\include{acronym} % Acronym list
+\printglossary[type=\acronymtype, title=Acronyms]
+
+% Include all chapters
+\include{chapters/introduction}
+\include{chapters/Technical_Background}
+\include{chapters/Methodology}
+
+
+\printbibliography
+
+
+\end{document}

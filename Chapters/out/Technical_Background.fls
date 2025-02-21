@@ -1,0 +1,10 @@
+PWD d:\AMM\Pro_3\Project_Report\chapters
+INPUT C:\Users\dell\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT d:\AMM\Pro_3\Project_Report\chapters\Technical_Background.tex
+OUTPUT d:\AMM\Pro_3\Project_Report\chapters\out\Technical_Background.log
+INPUT C:\Users\dell\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
+INPUT C:\Users\dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT C:\Users\dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+OUTPUT d:\AMM\Pro_3\Project_Report\chapters\out\Technical_Background.pdf
+INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm

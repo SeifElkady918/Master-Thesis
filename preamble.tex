@@ -1,0 +1,42 @@
+% Encoding and Fonts
+\usepackage[T1]{fontenc}
+
+% Page Layout and Spacing
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{setspace}
+\onehalfspacing % Line spacing
+\setlength{\parindent}{0pt} % No paragraph indentation
+\setlength{\parskip}{1em} % Paragraph spacing
+
+% Graphics and Figures
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{standalone}
+
+% Math and Equations
+\usepackage{amsmath}
+
+
+
+% Hyperlinks and Cross-References
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    citecolor=black,
+    urlcolor=black,
+    pdftitle={Master Thesis},
+    pdfpagemode=FullScreen,
+}
+
+
+% Bibliography and References
+\usepackage[style=ieee]{biblatex} % Change style as needed
+\addbibresource{bibliography.bib} % Path to your references file
+
+% Acronyms
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
