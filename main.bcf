@@ -2488,15 +2488,6 @@
     <bcf:citekey order="110" intorder="1">Sen_size_chart</bcf:citekey>
     <bcf:citekey order="111" intorder="1">Sensor_size</bcf:citekey>
     <bcf:citekey order="112" intorder="1">FPS</bcf:citekey>
-    <bcf:citekey order="113" intorder="1">IBM_Transfer_Learning</bcf:citekey>
-    <bcf:citekey order="114" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="115" intorder="1">AIMultiple_Computer_Vision_Training_Data</bcf:citekey>
-    <bcf:citekey order="116" intorder="1">AIMultiple_Computer_Vision_Training_Data</bcf:citekey>
-    <bcf:citekey order="117" intorder="1">AIMultiple_Computer_Vision_Training_Data</bcf:citekey>
-    <bcf:citekey order="118" intorder="1">AIMultiple_Computer_Vision_Training_Data</bcf:citekey>
-    <bcf:citekey order="119" intorder="1">AIMultiple_Computer_Vision_Training_Data</bcf:citekey>
-    <bcf:citekey order="120" intorder="1">AIMultiple_Computer_Vision_Training_Data</bcf:citekey>
-    <bcf:citekey order="121" intorder="1">AIMultiple_Computer_Vision_Training_Data</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

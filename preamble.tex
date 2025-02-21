@@ -1,5 +1,11 @@
 % Encoding and Fonts
 \usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter.}{1em}{}
+\usepackage{tocloft}
+\setlength{\cftbeforechapskip}{5pt}  % Adjust space before chapter entries
+\setlength{\cftbeforesecskip}{2pt}   % Adjust space before section entries
+\setlength{\cftbeforepartskip}{5pt}  % Adjust space before part entries
 
 % Page Layout and Spacing
 \usepackage{geometry}
@@ -39,4 +45,8 @@
 % Acronyms
 \usepackage[acronym]{glossaries}
 \makeglossaries
+
+\setlength{\glslistdottedwidth}{0.4\linewidth} 
+\setlength{\glsdescwidth}{0.5\linewidth} % Adjusts description width
+
 
