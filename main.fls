@@ -388,7 +388,6 @@ INPUT .\Figures\OD_Mindmape.PNG
 INPUT .\Figures\OD_Mindmape.PNG
 INPUT .\Figures\OD_Mindmape.PNG
 INPUT .\Figures\OD_Mindmape.PNG
-INPUT C:\Users\dell\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1200.tfm
 INPUT .\Figures\HOG_Histogram_image.PNG
 INPUT .\Figures\HOG_Histogram_image.PNG
 INPUT .\Figures\HOG_Histogram_image.PNG
@@ -504,6 +503,7 @@ INPUT .\Figures\sensor-chart.jpg
 INPUT .\Figures\sensor-chart.jpg
 INPUT .\Figures\sensor-chart.jpg
 INPUT .\Figures\sensor-chart.jpg
+INPUT C:\Users\dell\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1200.tfm
 INPUT C:\Users\dell\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\eccc1200.tfm
 INPUT main.aux
 INPUT .\coverPage.aux
@@ -518,10 +518,10 @@ INPUT main.run.xml
 OUTPUT main.run.xml
 INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
 INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
-INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
-INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
 INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
 INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
+INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
+INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
 INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\dell\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk
