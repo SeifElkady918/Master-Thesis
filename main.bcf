@@ -2396,31 +2396,31 @@
     <bcf:citekey order="18" intorder="1">oD_Review</bcf:citekey>
     <bcf:citekey order="19" intorder="1">oD_Review</bcf:citekey>
     <bcf:citekey order="20" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">HOG</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">HOG</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">HOG</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">OD_Survey</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">DL_VS_ML</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">Fam_Traditional_detectors</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">Fam_Traditional_detectors</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">Fam_Traditional_detectors</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">oD_Review</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">HOG</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">HOG</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">HOG</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">oD_Review</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">oD_Review</bcf:citekey>
     <bcf:citekey order="30" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">DL_VS_ML</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">ibm_cnn</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">OD_Survey</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">DL_VS_ML</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">oD_Review</bcf:citekey>
     <bcf:citekey order="34" intorder="1">DL_VS_ML</bcf:citekey>
     <bcf:citekey order="35" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">DNN_pic</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">DNN_pic</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">DL_VS_ML</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">ibm_cnn</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">Full_CNN</bcf:citekey>
-    <bcf:citekey order="42" intorder="1">Full_CNN</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">ibm_cnn</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">DL_VS_ML</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">oD_Review</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">DNN_pic</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">DNN_pic</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">DL_VS_ML</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">oD_Review</bcf:citekey>
     <bcf:citekey order="43" intorder="1">ibm_cnn</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">ibm_cnn</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">ibm_cnn</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">Full_CNN</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">Full_CNN</bcf:citekey>
     <bcf:citekey order="46" intorder="1">ibm_cnn</bcf:citekey>
     <bcf:citekey order="47" intorder="1">ibm_cnn</bcf:citekey>
     <bcf:citekey order="48" intorder="1">ibm_cnn</bcf:citekey>
@@ -2430,9 +2430,9 @@
     <bcf:citekey order="52" intorder="1">ibm_cnn</bcf:citekey>
     <bcf:citekey order="53" intorder="1">ibm_cnn</bcf:citekey>
     <bcf:citekey order="54" intorder="1">ibm_cnn</bcf:citekey>
-    <bcf:citekey order="55" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="56" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="57" intorder="1">oD_Review</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">ibm_cnn</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">ibm_cnn</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">ibm_cnn</bcf:citekey>
     <bcf:citekey order="58" intorder="1">oD_Review</bcf:citekey>
     <bcf:citekey order="59" intorder="1">oD_Review</bcf:citekey>
     <bcf:citekey order="60" intorder="1">oD_Review</bcf:citekey>
@@ -2445,49 +2445,52 @@
     <bcf:citekey order="67" intorder="1">oD_Review</bcf:citekey>
     <bcf:citekey order="68" intorder="1">oD_Review</bcf:citekey>
     <bcf:citekey order="69" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="70" intorder="1">YOLO</bcf:citekey>
-    <bcf:citekey order="71" intorder="1">YOLO</bcf:citekey>
-    <bcf:citekey order="72" intorder="1">YOLO</bcf:citekey>
-    <bcf:citekey order="73" intorder="1">ultralytics_yolo_history</bcf:citekey>
-    <bcf:citekey order="74" intorder="1">ultralytics_yolo_history</bcf:citekey>
-    <bcf:citekey order="75" intorder="1">SSD</bcf:citekey>
-    <bcf:citekey order="76" intorder="1">SSD</bcf:citekey>
-    <bcf:citekey order="77" intorder="1">SSD</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">oD_Review</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">oD_Review</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">oD_Review</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">YOLO</bcf:citekey>
+    <bcf:citekey order="74" intorder="1">YOLO</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">YOLO</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">ultralytics_yolo_history</bcf:citekey>
+    <bcf:citekey order="77" intorder="1">ultralytics_yolo_history</bcf:citekey>
     <bcf:citekey order="78" intorder="1">SSD</bcf:citekey>
-    <bcf:citekey order="79" intorder="1">RatinaNet</bcf:citekey>
-    <bcf:citekey order="80" intorder="1">RatinaNet</bcf:citekey>
-    <bcf:citekey order="81" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="82" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="83" intorder="1">oD_Review</bcf:citekey>
+    <bcf:citekey order="79" intorder="1">SSD</bcf:citekey>
+    <bcf:citekey order="80" intorder="1">SSD</bcf:citekey>
+    <bcf:citekey order="81" intorder="1">SSD</bcf:citekey>
+    <bcf:citekey order="82" intorder="1">RatinaNet</bcf:citekey>
+    <bcf:citekey order="83" intorder="1">RatinaNet</bcf:citekey>
     <bcf:citekey order="84" intorder="1">oD_Review</bcf:citekey>
-    <bcf:citekey order="85" intorder="1">LADet</bcf:citekey>
-    <bcf:citekey order="86" intorder="1">LADet</bcf:citekey>
-    <bcf:citekey order="87" intorder="1">LADet</bcf:citekey>
+    <bcf:citekey order="85" intorder="1">oD_Review</bcf:citekey>
+    <bcf:citekey order="86" intorder="1">oD_Review</bcf:citekey>
+    <bcf:citekey order="87" intorder="1">oD_Review</bcf:citekey>
     <bcf:citekey order="88" intorder="1">LADet</bcf:citekey>
     <bcf:citekey order="89" intorder="1">LADet</bcf:citekey>
-    <bcf:citekey order="90" intorder="1">AS_VS_LS_ART</bcf:citekey>
-    <bcf:citekey order="91" intorder="1">AS_VS_LS_ART</bcf:citekey>
-    <bcf:citekey order="92" intorder="1">AS_VS_LS_ART</bcf:citekey>
+    <bcf:citekey order="90" intorder="1">LADet</bcf:citekey>
+    <bcf:citekey order="91" intorder="1">LADet</bcf:citekey>
+    <bcf:citekey order="92" intorder="1">LADet</bcf:citekey>
     <bcf:citekey order="93" intorder="1">AS_VS_LS_ART</bcf:citekey>
-    <bcf:citekey order="94" intorder="1">AS_VS_LS_PIC</bcf:citekey>
-    <bcf:citekey order="95" intorder="1">AS_VS_LS_PIC</bcf:citekey>
-    <bcf:citekey order="96" intorder="1">RES_IMP</bcf:citekey>
-    <bcf:citekey order="97" intorder="1">RES_IMP</bcf:citekey>
-    <bcf:citekey order="98" intorder="1">RES_IMP</bcf:citekey>
+    <bcf:citekey order="94" intorder="1">AS_VS_LS_ART</bcf:citekey>
+    <bcf:citekey order="95" intorder="1">AS_VS_LS_ART</bcf:citekey>
+    <bcf:citekey order="96" intorder="1">AS_VS_LS_ART</bcf:citekey>
+    <bcf:citekey order="97" intorder="1">AS_VS_LS_PIC</bcf:citekey>
+    <bcf:citekey order="98" intorder="1">AS_VS_LS_PIC</bcf:citekey>
     <bcf:citekey order="99" intorder="1">RES_IMP</bcf:citekey>
-    <bcf:citekey order="100" intorder="1">RES_HDR_IMP</bcf:citekey>
+    <bcf:citekey order="100" intorder="1">RES_IMP</bcf:citekey>
     <bcf:citekey order="101" intorder="1">RES_IMP</bcf:citekey>
-    <bcf:citekey order="102" intorder="1">HDR</bcf:citekey>
-    <bcf:citekey order="103" intorder="1">sunlight_lum</bcf:citekey>
-    <bcf:citekey order="104" intorder="1">HDR</bcf:citekey>
+    <bcf:citekey order="102" intorder="1">RES_IMP</bcf:citekey>
+    <bcf:citekey order="103" intorder="1">RES_HDR_IMP</bcf:citekey>
+    <bcf:citekey order="104" intorder="1">RES_IMP</bcf:citekey>
     <bcf:citekey order="105" intorder="1">HDR</bcf:citekey>
-    <bcf:citekey order="106" intorder="1">HDR</bcf:citekey>
+    <bcf:citekey order="106" intorder="1">sunlight_lum</bcf:citekey>
     <bcf:citekey order="107" intorder="1">HDR</bcf:citekey>
     <bcf:citekey order="108" intorder="1">HDR</bcf:citekey>
-    <bcf:citekey order="109" intorder="1">Sen_size_chart</bcf:citekey>
-    <bcf:citekey order="110" intorder="1">Sen_size_chart</bcf:citekey>
-    <bcf:citekey order="111" intorder="1">Sensor_size</bcf:citekey>
-    <bcf:citekey order="112" intorder="1">FPS</bcf:citekey>
+    <bcf:citekey order="109" intorder="1">HDR</bcf:citekey>
+    <bcf:citekey order="110" intorder="1">HDR</bcf:citekey>
+    <bcf:citekey order="111" intorder="1">HDR</bcf:citekey>
+    <bcf:citekey order="112" intorder="1">Sen_size_chart</bcf:citekey>
+    <bcf:citekey order="113" intorder="1">Sen_size_chart</bcf:citekey>
+    <bcf:citekey order="114" intorder="1">Sensor_size</bcf:citekey>
+    <bcf:citekey order="115" intorder="1">FPS</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

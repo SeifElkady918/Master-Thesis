@@ -225,6 +225,39 @@
       \verb https://doi.org/10.1007/s11042-022-13153-y
       \endverb
     \endentry
+    \entry{Fam_Traditional_detectors}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0791734e6235cf888f1288ad1552418b}{%
+           family={Boesch},
+           familyi={B\bibinitperiod},
+           given={Gaudenz},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{0791734e6235cf888f1288ad1552418b}
+      \strng{fullhash}{0791734e6235cf888f1288ad1552418b}
+      \strng{fullhashraw}{0791734e6235cf888f1288ad1552418b}
+      \strng{bibnamehash}{0791734e6235cf888f1288ad1552418b}
+      \strng{authorbibnamehash}{0791734e6235cf888f1288ad1552418b}
+      \strng{authornamehash}{0791734e6235cf888f1288ad1552418b}
+      \strng{authorfullhash}{0791734e6235cf888f1288ad1552418b}
+      \strng{authorfullhashraw}{0791734e6235cf888f1288ad1552418b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{4}
+      \field{month}{10}
+      \field{note}{Accessed: 2025-02-24}
+      \field{title}{Object Detection: The Definitive 2025 Guide}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://viso.ai/deep-learning/object-detection/
+      \endverb
+      \verb{url}
+      \verb https://viso.ai/deep-learning/object-detection/
+      \endverb
+    \endentry
     \entry{HOG}{online}{}{}
       \name{author}{1}{}{%
         {{hash=3b86256e9c2117ad2222385883bae0dd}{%
@@ -276,8 +309,8 @@
       \strng{authornamehash}{cc1ed579d302cd3ea8291848d13036e4}
       \strng{authorfullhash}{cc1ed579d302cd3ea8291848d13036e4}
       \strng{authorfullhashraw}{cc1ed579d302cd3ea8291848d13036e4}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Basrah Researches Sciences}
@@ -305,8 +338,8 @@
       \strng{authornamehash}{57f3af2a3d1051c172ab3c3db7d5409d}
       \strng{authorfullhash}{57f3af2a3d1051c172ab3c3db7d5409d}
       \strng{authorfullhashraw}{57f3af2a3d1051c172ab3c3db7d5409d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2024-06-17}
@@ -546,8 +579,8 @@
       \strng{authornamehash}{225c3f82f1085d9f1d6a4993e3cdf677}
       \strng{authorfullhash}{225c3f82f1085d9f1d6a4993e3cdf677}
       \strng{authorfullhashraw}{225c3f82f1085d9f1d6a4993e3cdf677}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-01-14}
