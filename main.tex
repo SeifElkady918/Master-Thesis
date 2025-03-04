@@ -1,14 +1,14 @@
 \documentclass[a4paper,12pt]{report}
 
-\input{preamble} 
-\input{acronym} 
+\input{Additional/preamble} 
+\input{Additional/acronym} 
 
 
 \begin{document}
 
-\include{coverPage} % Cover page
+\include{Additional/coverPage} 
 
-%\include{abstract} % Abstract section
+\include{Additional/abstract} 
 
 \tableofcontents % Generates the Table of Contents
 
@@ -17,9 +17,10 @@
 %\include{acronym} % Acronym list
 
 % Include all chapters
-%\include{chapters/introduction}
+\include{chapters/introduction}
 \include{chapters/Technical_Background}
 %\include{chapters/Methodology}
+\include{Chapters/Conclusion}
 
 
 \printbibliography

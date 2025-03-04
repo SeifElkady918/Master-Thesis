@@ -112,7 +112,7 @@
       \field{title}{Introduction to Software Testing}
       \field{year}{2023}
     \endentry
-    \entry{ML_SW_Testing}{inproceedings}{}{}
+    \entry{ML_SW_Testing}{article}{}{}
       \name{author}{2}{}{%
         {{hash=7a86a3010e851b04c3f0d342ec2db03a}{%
            family={Vedpal},
@@ -135,13 +135,19 @@
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{2021 5th International Conference on Information Systems and Computer Networks (ISCON)}
+      \field{journaltitle}{2021 5th International Conference on Information Systems and Computer Networks (ISCON)}
       \field{title}{Role of Machine Learning in Software Testing}
       \field{year}{2021}
       \field{pages}{1\bibrangedash 5}
       \range{pages}{5}
       \verb{doi}
       \verb 10.1109/ISCON52037.2021.9702427
+      \endverb
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:246870267
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:246870267
       \endverb
     \endentry
     \entry{shiwangi2014}{article}{}{}
@@ -217,12 +223,6 @@
       \range{pages}{55}
       \verb{doi}
       \verb 10.1007/s11042-022-13153-y
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1007/s11042-022-13153-y
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1007/s11042-022-13153-y
       \endverb
     \endentry
     \entry{Fam_Traditional_detectors}{online}{}{}
@@ -562,22 +562,18 @@
     \endentry
     \entry{RatinaNet}{online}{}{}
       \name{author}{1}{}{%
-        {{hash=225c3f82f1085d9f1d6a4993e3cdf677}{%
-           family={Code},
-           familyi={C\bibinitperiod},
-           given={Papers},
-           giveni={P\bibinitperiod},
-           prefix={with},
-           prefixi={w\bibinitperiod}}}%
+        {{hash=018631dc897a957eb0dac4b06c205806}{%
+           family={{Papers with Code}},
+           familyi={P\bibinitperiod}}}%
       }
-      \strng{namehash}{225c3f82f1085d9f1d6a4993e3cdf677}
-      \strng{fullhash}{225c3f82f1085d9f1d6a4993e3cdf677}
-      \strng{fullhashraw}{225c3f82f1085d9f1d6a4993e3cdf677}
-      \strng{bibnamehash}{225c3f82f1085d9f1d6a4993e3cdf677}
-      \strng{authorbibnamehash}{225c3f82f1085d9f1d6a4993e3cdf677}
-      \strng{authornamehash}{225c3f82f1085d9f1d6a4993e3cdf677}
-      \strng{authorfullhash}{225c3f82f1085d9f1d6a4993e3cdf677}
-      \strng{authorfullhashraw}{225c3f82f1085d9f1d6a4993e3cdf677}
+      \strng{namehash}{018631dc897a957eb0dac4b06c205806}
+      \strng{fullhash}{018631dc897a957eb0dac4b06c205806}
+      \strng{fullhashraw}{018631dc897a957eb0dac4b06c205806}
+      \strng{bibnamehash}{018631dc897a957eb0dac4b06c205806}
+      \strng{authorbibnamehash}{018631dc897a957eb0dac4b06c205806}
+      \strng{authornamehash}{018631dc897a957eb0dac4b06c205806}
+      \strng{authorfullhash}{018631dc897a957eb0dac4b06c205806}
+      \strng{authorfullhashraw}{018631dc897a957eb0dac4b06c205806}
       \field{sortinit}{8}
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
@@ -676,20 +672,18 @@
     \endentry
     \entry{AS_VS_LS_ART}{online}{}{}
       \name{author}{1}{}{%
-        {{hash=58f5a9673f2f0d734fd80ec7ea45a599}{%
-           family={Technologies},
-           familyi={T\bibinitperiod},
-           given={Qualitas},
-           giveni={Q\bibinitperiod}}}%
+        {{hash=1751116bf40f66920aa91a2560fdfb36}{%
+           family={{Qualitas Technologies}},
+           familyi={Q\bibinitperiod}}}%
       }
-      \strng{namehash}{58f5a9673f2f0d734fd80ec7ea45a599}
-      \strng{fullhash}{58f5a9673f2f0d734fd80ec7ea45a599}
-      \strng{fullhashraw}{58f5a9673f2f0d734fd80ec7ea45a599}
-      \strng{bibnamehash}{58f5a9673f2f0d734fd80ec7ea45a599}
-      \strng{authorbibnamehash}{58f5a9673f2f0d734fd80ec7ea45a599}
-      \strng{authornamehash}{58f5a9673f2f0d734fd80ec7ea45a599}
-      \strng{authorfullhash}{58f5a9673f2f0d734fd80ec7ea45a599}
-      \strng{authorfullhashraw}{58f5a9673f2f0d734fd80ec7ea45a599}
+      \strng{namehash}{1751116bf40f66920aa91a2560fdfb36}
+      \strng{fullhash}{1751116bf40f66920aa91a2560fdfb36}
+      \strng{fullhashraw}{1751116bf40f66920aa91a2560fdfb36}
+      \strng{bibnamehash}{1751116bf40f66920aa91a2560fdfb36}
+      \strng{authorbibnamehash}{1751116bf40f66920aa91a2560fdfb36}
+      \strng{authornamehash}{1751116bf40f66920aa91a2560fdfb36}
+      \strng{authorfullhash}{1751116bf40f66920aa91a2560fdfb36}
+      \strng{authorfullhashraw}{1751116bf40f66920aa91a2560fdfb36}
       \field{sortinit}{9}
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
@@ -706,20 +700,18 @@
     \endentry
     \entry{AS_VS_LS_PIC}{online}{}{}
       \name{author}{1}{}{%
-        {{hash=5b62b2119482e79d3367c866cc37dfda}{%
-           family={Systems},
-           familyi={S\bibinitperiod},
-           given={Lake\bibnamedelima Image},
-           giveni={L\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=cb0b6445ce8850e1ab434aaec601df66}{%
+           family={{Lake Image Systems}},
+           familyi={L\bibinitperiod}}}%
       }
-      \strng{namehash}{5b62b2119482e79d3367c866cc37dfda}
-      \strng{fullhash}{5b62b2119482e79d3367c866cc37dfda}
-      \strng{fullhashraw}{5b62b2119482e79d3367c866cc37dfda}
-      \strng{bibnamehash}{5b62b2119482e79d3367c866cc37dfda}
-      \strng{authorbibnamehash}{5b62b2119482e79d3367c866cc37dfda}
-      \strng{authornamehash}{5b62b2119482e79d3367c866cc37dfda}
-      \strng{authorfullhash}{5b62b2119482e79d3367c866cc37dfda}
-      \strng{authorfullhashraw}{5b62b2119482e79d3367c866cc37dfda}
+      \strng{namehash}{cb0b6445ce8850e1ab434aaec601df66}
+      \strng{fullhash}{cb0b6445ce8850e1ab434aaec601df66}
+      \strng{fullhashraw}{cb0b6445ce8850e1ab434aaec601df66}
+      \strng{bibnamehash}{cb0b6445ce8850e1ab434aaec601df66}
+      \strng{authorbibnamehash}{cb0b6445ce8850e1ab434aaec601df66}
+      \strng{authornamehash}{cb0b6445ce8850e1ab434aaec601df66}
+      \strng{authorfullhash}{cb0b6445ce8850e1ab434aaec601df66}
+      \strng{authorfullhashraw}{cb0b6445ce8850e1ab434aaec601df66}
       \field{sortinit}{9}
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}

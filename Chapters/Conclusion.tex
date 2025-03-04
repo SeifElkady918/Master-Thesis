@@ -1,0 +1,13 @@
+\chapter{Conclusion And Future Work}
+
+\section{Conclusion}
+This study explored the application of \gls{dl}-based \gls{od} techniques for motorbike \gls{db} \gls{sw} validation, with the goal of developing an automated testing environment. Traditional manual testing methods, while widely used, present significant limitations, including time inefficiency, high operational costs and susceptibility to human error. To address these challenges, the study investigated how \gls{od} techniques, supported by \gls{dl} algorithms can enhance the efficiency and the reliability of \gls{db} testing.
+
+A thorough review of \gls{od} techniques was conducted, outlining the shift from traditional methods, such as \gls{vj} and \gls{hog} to modern \gls{dl}-based techniques that uses \gls{cnn}s. these techniques includes \gls{rcnn}, \gls{yolo} and \gls{ssd}. The advantages of \gls{dl}-based \gls{od} are higher accuracy, real-time processing capabilities and reduced dependency on handcrafted feature extraction, were highlighted in this study.
+
+Furthermore, the study examined the selection criteria for \gls{cs}s and their impact on \gls{od} model performance. Factors such as scanning method, resolution, \gls{dr}, sensor size and frame rate were analyzed to determine their influence on the detection algorithms. High-resolution and \gls{hdr}-capable cameras were found to provide improved detection performance, particularly in low-light or high-contrast conditions, this makes them suitable for \gls{db} \gls{sw} validation. Additionally, area scan approach was found more suitable for real-time detection and Frame rate will only influence the project if real-time \gls{od} is required. 
+
+To achieve an effective automated testing setup, a \gls{hil} system was proposed, integrating a \gls{cs} with \gls{dl}-based \gls{od} algorithms to capture, analyze, and validate dashboard display assets. This approach allows for systematic and scalable testing that ensures the \gls{db} software meets safety requirements.
+
+\section{Future Work}
+In the next steps of this project, a custom dataset will be collected and annotated to train different \gls{od} models. Furthermore, these models will be evaluated according to standard evaluation parameters. Additionally, a \gls{cs} will be selected according to the available budget and the selection criteria mentioned. Later, an integration strategy between the \gls{cs}, the \gls{hil} and the \gls{od} algorithm will be implemented to allow for seamless operation. Finally, a graphical user interface will be developed to simplify the testing process for KTM test engineers.
