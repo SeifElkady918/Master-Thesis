@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background And Motivation}{4}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Study Structure}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Study Structure}{5}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Technical Background}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Dashboard Testing}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Testing}{8}{section.2.2}%
@@ -15,7 +15,7 @@
 \contentsline {subsubsection}{Deformable Part-Based Models}{16}{subsubsection*.12}%
 \contentsline {subsubsection}{Limitations}{16}{subsubsection*.13}%
 \contentsline {subsection}{\numberline {2.3.2}The Shift To Deep Learning}{17}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Convolutional Neural Networks}{18}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.3}Convolutional Neural Networks}{19}{subsection.2.3.3}%
 \contentsline {subsubsection}{Convolutional Layer}{19}{subsubsection*.16}%
 \contentsline {subsubsection}{Pooling Layer}{20}{subsubsection*.18}%
 \contentsline {subsubsection}{Fully Connected Layer}{21}{subsubsection*.19}%
@@ -27,7 +27,7 @@
 \contentsline {subsection}{\numberline {2.4.1}Scanning Method}{29}{subsection.2.4.1}%
 \contentsline {subsubsection}{Line Scan Cameras}{29}{subsubsection*.30}%
 \contentsline {subsubsection}{Area Scan Cameras}{30}{subsubsection*.31}%
-\contentsline {subsection}{\numberline {2.4.2}Resolution}{30}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.2}Resolution}{31}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Dynamic Range}{32}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Sensor Size}{34}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}Frame Rate}{35}{subsection.2.4.5}%

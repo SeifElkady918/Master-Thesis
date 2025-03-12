@@ -55,7 +55,7 @@ These testing levels are known as the testing pyramid. Figure~\ref{TP} illustrat
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/Testing_triangle.png}  % Adjust the path and width as needed
-    \caption{Testing pyramid consisting of 4 levels: unite tests, integration tests, system tests, user acceptance test \cite{leloudas2023}}
+    \caption{Testing pyramid consisting of 4 levels: unit tests, integration tests, system tests, user acceptance test \cite{leloudas2023}}
     \label{TP}
 \end{figure}
 
@@ -96,7 +96,7 @@ The difference between automated and manual \gls{sw} testing lies in their appli
 \end{table}
 
 \subsection{Testing Requirements}
-Testing a component or a system requires some preparation and depends on the type of testing one is planning to perform. In manual testing, the requirements are relatively minimal. For example, testing motor bike \gls{db} as a component requires a handlebar with control buttons , a CAN connector to connect to the pc that simulates the rest of the components communicating with the \gls{db} so that it does not show errors, the \gls{db} itself and a tester. Connecting all these components correctly will result in a component fully functioning and ready to test.
+Testing a component or a system requires some preparation and depends on the type of testing one is planning to perform. In manual testing, the requirements are relatively minimal. For example, testing motor bike \gls{db} as a component requires a handlebar with control buttons, a CAN connector to connect to the pc that simulates the rest of the components communicating with the \gls{db} so that it does not show errors, the \gls{db} itself and a tester. Connecting all these components correctly will result in a component fully functioning and ready to test.
 
 On the other hand, to perform the same tests in an automated approach demands significantly more hardware and \gls{sw} than this. Using the same example of the \gls{db} testing, the basic components required would be:
 \begin{itemize}
@@ -114,7 +114,7 @@ Further in this chapter the \gls{od} techniques will be discussed in details, as
 \section{Object Detection}
 Recognizing objects in a real-world environment using a machine presents a significant challenge. Computer vision, a specialized field within computer science, provides machines with the capability to perceive, identify, and interpret objects from images and videos. Videos are made up of a series of arranged images, called frames, displayed at a specific rate. While humans can identify objects and their positions within visual data by using their eyes to capture images and transmitting them to the brain for processing, machines rely on \gls{cs} to acquire visual input and employ complex algorithms to process the data and achieve similar capabilities. This technology has been a critical area of research for decades, enabling advancements in applications such as face recognition, pedestrian tracking, security systems, vehicle identification, and autonomous driving \cite{oD_Review}. Recently, \gls{od} has created new opportunities for test engineers to take advantage of these techniques in the field of \gls{db} testing. By integrating \gls{od} methods, engineers can develop more efficient and reliable testing processes, ultimately ensuring the delivery of the highest quality results to the end customer.
 
-\gls{od} is a fundamental process in computer vision, it is defined as the process of integrating object classification and localization to identify and locate multiple objects within an image or video frames. Object classification assigns labels to objects by determining their categories, while object localization identifies their positions. An example of an object classification and localization (\gls{od}) is shown in figure~\ref{Single_object}. In a normal object recognition workflow, an image is analyzed to detect objects, assign labels corresponding to their categories, and calculate the probability for each identified class. Unique object features, such as the equal sides of a square, play a critical role in determining their categories, helping to accurately classify and distinguish between various objects within the image \cite{oD_Review}.
+\gls{od} is a fundamental process in computer vision, it is defined as the process of integrating object classification and localization to identify and locate multiple objects within an image or video frames. Object classification assigns labels to objects by determining their categories, while object localization identifies their positions. An example of an object classification and localization is shown in figure~\ref{Single_object}. In a normal object recognition workflow, an image is analyzed to detect objects, assign labels corresponding to their categories, and calculate the probability for each identified class. Unique object features, such as the equal sides of a square, play a critical role in determining their categories, helping to accurately classify and distinguish between various objects within the image \cite{oD_Review}.
 
 \begin{figure}[ht]
     \centering
@@ -155,14 +155,14 @@ The \gls{vj} detector was named after the authors of this technique “Paul Viol
     Haar-like features are used to represent patterns in the image, such as contrasts between bright and dark regions, such as darker eyes compared to brighter cheeks. These features are calculated by subtracting the sum of pixel intensities in adjacent regions.
     
     \item \textbf{Feature Selection:}  
-    Due to the large number of potential Haar-like features, AdaBoost is used to select the most relevant characteristics. AdaBoost combines many weak classifiers into a strong classifier. It assigns higher weights to features that distinguish between faces and non-faces betters.
+    Due to the large number of potential Haar-like features, AdaBoost is used to select the most relevant characteristics. AdaBoost combines many weak classifiers into a strong classifier. It assigns higher weights to features that distinguish better between faces and non-faces.
 
     \item \textbf{Detection Cascade:}  
     The last step of the \gls{vj} detector is a cascade of classifiers. It is used to discard the background region from the image and focuses the computational power on the objects itself rather than the complete image. It consists of multiple stages where each stage filters out non-face regions. The early stages use simple classifiers to eliminate most of the image, while the later stages apply a more complex analysis to regions likely to contain faces.
 
 \end{enumerate}
 
-While the \gls{vj} detector was a groundbreaking approach for \gls{od} it had some limitations had limitations in handling complex variations in object appearance. To overcome some of these challenges, the \gls{hog} detector was introduced.
+While the \gls{vj} detector was a groundbreaking approach for \gls{od} it had some limitations in handling complex variations in object appearance. To overcome some of these challenges, the \gls{hog} detector was introduced.
 
 \subsubsection{Histogram Of Oriented Gradients}
  \gls{hog} is one of the most famous feature descriptors. Feature descriptors are methods that transform raw data into a more simplified form that contains only the most important features to minimize the required computational power. \gls{hog} describes the shape and appearance of the object by analyzing the distribution of edge orientations. The \gls{hog} method calculates the gradient magnitude and orientation for each pixel in an image and partitions the image into small cells, unlike simple edge features that only detect edges without direction. The image is divided into smaller regions (localized portions), and gradients and orientations are computed for each region. A histogram is then generated for each region based on these gradients and orientations \cite{HOG}. Figure~\ref{HOG_image} shows the comparison between the input image and the \gls{hog} image.
@@ -190,7 +190,7 @@ In conclusion, most of traditional \gls{ml} \gls{od} techniques depend on scanni
 \subsection{The Shift To Deep Learning}
 The field of \gls{od} has seen a significant transformation, transitioning from traditional \gls{ml} methods to state-of-the-art \gls{dl} approaches. Unlike traditional methods that rely on hand-crafted features, modern \gls{dl}-based techniques automatically learn intricate and hierarchical representations directly from the data. This capability enables more accurate, adaptable, and scalable detection systems.  
 
-\gls{dl}-based detectors excel at recognizing complex patterns and finding variations within images, significantly outperforming conventional approaches, particularly in challenging tasks such as image classification and \gls{od}. By using the multi-layered feature extraction capabilities of \gls{dnn}, these systems can effectively address diverse scenarios, including variations in lighting conditions, occlusions, and object scales. This shift marks a transformative advancement in \gls{od}, providing robust and precise solutions for different industries, from autonomous vehicles to medical imaging and security systems.  
+\gls{dl}-based detectors excel at recognizing complex patterns and finding variations within images, significantly outperforming conventional approaches, particularly in challenging tasks such as image classification and \gls{od}. By using the multi-layered feature extraction capabilities of a \gls{dnn}, these systems can effectively address diverse scenarios, including variations in lighting conditions, occlusions, and object scales. This shift marks a transformative advancement in \gls{od}, providing robust and precise solutions for different industries, from autonomous vehicles to medical imaging and security systems.  
 
 What is \gls{dl}, and How is it different from \gls{ml}? 
 
@@ -207,9 +207,9 @@ At the core of \gls{dl} are artificial \gls{nn}s, consisting of interconnected n
     \label{DNN}
 \end{figure}
 
-Once trained, a \gls{nn} can efficiently analyze new unseen data and make highly accurate predictions, making it an invaluable tool for solving complex real-world problems. The ability of \gls{dl} to adapt to large unstructured data sets and uncover hidden relationships within them has strengthened its role as a revolutionary advancement in \gls{ai} \cite{DL_VS_ML} \cite{oD_Review}.
+Once trained, an \gls{nn} can efficiently analyze new unseen data and make highly accurate predictions, making it an invaluable tool for solving complex real-world problems. The ability of \gls{dl} to adapt to large unstructured data sets and uncover hidden relationships within them has strengthened its role as a revolutionary advancement in \gls{ai} \cite{DL_VS_ML} \cite{oD_Review}.
 
-The \gls{nn}s mentioned above are the simplest form of \gls{nn}s and are known as feedforward \gls{nn}s. However, there are different types of \gls{nn}s nowadays, focusing on different tasks and data types. For example,  in natural language processing and speech recognition, one can use recurrent \gls{nn}s. On the other hand, when dealing with a classification problem or a computer vision task, one can depend on \gls{cnn}s. \gls{cnn}s offer a scalable solution for image classification and object recognition. It Uses linear algebra concepts like matrix multiplication to detect patterns within images \cite{ibm_cnn}.
+The \gls{nn}s mentioned above are the simplest form of \gls{nn}s and are known as feedforward \gls{nn}s. However, there are different types of \gls{nn}s nowadays, focusing on different tasks and data types. For example,  in natural language processing and speech recognition, one can use recurrent \gls{nn}s. On the other hand, when dealing with a classification problem or a computer vision task, one can depend on \gls{cnn}s. \gls{cnn}s offer a scalable solution for image classification and object recognition. It uses linear algebra concepts like matrix multiplication to detect patterns within images \cite{ibm_cnn}.
 
 \subsection{Convolutional Neural Networks}
 \gls{cnn}s often consists of 3 main types of layers, \gls{cl}, \gls{pl} and \gls{fcl}. The first layer is always the \gls{cl}, it could be then followed by another \gls{cl} or a \gls{pl} and the final layer is always an \gls{fcl}. Figure~\ref{full_cnn} shows a schematic of a \gls{cnn} architecture. As a \gls{cnn} processes an image through these multiple layers, it gradually builds a more detailed understanding of the content of the image. The initial layers detect basic features like edges and colors, while deeper layers analyze more complex patterns and structures. As the data moves through the network, it begins to recognize larger shapes and meaningful components, ultimately leading to the identification of the entire object.
@@ -301,7 +301,7 @@ Two-stage detectors, also known as multi-stage detectors, typically comprise two
 \end{enumerate}
 
 \subsubsection{One Stage Detector}
-The idea of the one stage detectors is to increase the speed of the detection and reduce the computational demand while maintaining high accuracy. This is done by remove the intermediate task to take the final output. The one stage detectors are very useful in real time detection applications that require high speed detection like autonomous systems.
+The idea of the one stage detectors is to increase the speed of the detection and reduce the computational demand while maintaining high accuracy. This is done by removing the intermediate task to take the final output. The one stage detectors are very useful in real time detection applications that require high speed detection like autonomous systems.
 
 \begin{enumerate}
     \item \textbf{\gls{yolo}:} In 2015, \gls{yolo} was introduced as the first single-stage \gls{od} framework. It uses a deep \gls{cnn} to process the entire input image and detect objects. The initial 20 convolutional layers are pre-trained on the ImageNet dataset, with modifications made for \gls{od} tasks. \gls{yolo}’s \gls{fcl} predicts both class probabilities and bounding box coordinates.
@@ -364,7 +364,7 @@ The idea of the one stage detectors is to increase the speed of the detection an
 
     A key advantage of RetinaNet lies in its ability to handle class imbalance without relying on the cascaded sampling techniques commonly used in two-stage detectors. In traditional two-stage detectors, the proposal stage filters out most background samples, then the classification stage uses heuristics like fixed foreground-to-background ratios or online hard example mining. On the other hand, RetinaNet processes a larger set of candidate locations uniformly sampled across the image. It uses focal loss to dynamically scale the cross-entropy loss in a way that reduces its influence for well-predicted classes, allowing the model to focus on challenging cases \cite{RatinaNet}.
 
-    The network architecture is shown in figure~\ref{Ratina} and includes four components: a bottom-up pathway using a ResNet backbone, a top-down pathway enhanced with feature pyramid network, a classification subnetwork, and a regression subnetwork. The feature pyramid networks allows effective feature extraction across multiple scales, facilitating the detection of objects of varying sizes. The classification subnetwork predicts the probabilities of the object class and the anchor boxes, while the regression subnetwork refines the offsets of the bounding box. This multi-scale capability makes RetinaNet particularly effective for detecting small or densely packed objects \cite{oD_Review}.
+    The network architecture is shown in figure~\ref{Ratina} and includes four components: a bottom-up pathway using a ResNet backbone, a top-down pathway enhanced with feature pyramid network, a classification subnetwork, and a regression subnetwork. The feature pyramid network allows effective feature extraction across multiple scales, facilitating the detection of objects of varying sizes. The classification subnetwork predicts the probabilities of the object class and the anchor boxes, while the regression subnetwork refines the offsets of the bounding box. This multi-scale capability makes RetinaNet particularly effective for detecting small or densely packed objects \cite{oD_Review}.
 
      \begin{figure}[ht]
         \centering
@@ -472,7 +472,7 @@ Using \gls{hdr} imaging in \gls{dl} offers several benefits, such as improved mo
 To overcome this limitation, one can use tone mapping operators to map the \gls{hdr} content to \gls{sdr} content without losing the assets in the original scene. This is done using a tone-compression curve; it works by changing the 16/32 bit floating point to 8 bit channels. Resulting in a pixel value ranging from 0 to 255. \cite{HDR}.
 
 \subsection{Sensor Size}
-The term sensor size in \gls{cs}s refers to the physical dimensions of the imaging sensor, which captures light and converts it into electrical signals to create digital images. Figure~\ref{Sen_Size_chart} illustrates how sensor size changes between multiple devices. But is it correct to assume that a larger sensor size automatically results in better image quality with more detail? The answer is not straightforward and depending on the configuration of the pixels in the sensor. 
+The term sensor size in \gls{cs}s refers to the physical dimensions of the imaging sensor, which captures light and converts it into electrical signals to create digital images. Figure~\ref{Sen_Size_chart} illustrates how sensor size changes between multiple devices. However, is it correct to assume that a larger sensor size automatically results in better image quality with more detail? The answer is not straightforward and depending on the configuration of the pixels in the sensor. 
 
 \begin{figure}[ht]
     \centering
@@ -490,7 +490,7 @@ To explain this in simple terms, one can link the performance of the sensor to i
 \end{itemize}
 
 
-While this explanation is valid for traditional CMOS sensors. Modern sensor technologies have arisen lately that might change this a bit. Technologies like backside illumination CMOS and Stacked CMOS, these small size pixel sensors can deliver same or better results than the big size traditional ones \cite{Fisher_CMOS_Types_2024}.
+While this explanation is valid for traditional CMOS sensors, modern sensor technologies have arisen lately that might change this a bit. Technologies like backside illumination CMOS and Stacked CMOS, these small size pixel sensors can deliver same or better results than the big size traditional ones \cite{Fisher_CMOS_Types_2024}.
 
 \subsection{Frame Rate}
 
@@ -498,7 +498,7 @@ Frame rate, expressed in \gls{fps}, plays a crucial role in the performance of \
 
 The authors claimed that high frame rates play a crucial role in real-time \gls{od} by proving that it  minimizes the distance a vehicle travels between captured frames, therefor enhancing decision-making speed. For example, at a velocity of 80 km/h, a camera operating at 60 \gls{fps} corresponds to 37 cm of travel per frame. Doubling the frame rate to 120 \gls{fps} reduces this distance to 18.5 cm per frame, allowing earlier and more accurate detection and response to objects. This improvement is particularly significant in high-speed and complex scenarios where timely and precise decisions are needed. Moreover, higher frame rates improve the detection of fast-moving or distant objects by providing a more continuous and detailed input stream for the detection model.
 
-In an application such as \gls{db} testing where objects and texts are stationary for the current generation, it's not necessary to consider such a parameter when choosing a CS. However, it is expected to have high more animations and graphics in the future generations of \gls{db}, that is why it could be a good investment to include such a parameter in the decision making process if the resources allow.
+In an application such as \gls{db} testing where objects and texts are stationary for the current generation, it is not necessary to consider such a parameter when choosing a CS. However, it is expected to have more animations and graphics in the future generations of \gls{db}, that is why it could be a good investment to include such a parameter in the decision making process if the resources allow.
 
 \subsection{Summary}
 It is essential to select the correct \gls{cs} when developing an \gls{od} project, as it can highly influence the results, as discussed earlier. Based on the project requirements, different factors should be considered when choosing the \gls{cs}. The scanning method determines how images are captured. Line scan cameras can be suitable for high speed applications like in production lines. On the other hand, area scan cameras excel in real-time \gls{od}. Moreover, resolution of the \gls{cs} is another important parameter to consider. When resolution increases, more details could be captured and better detection performance could be achieved. However, this comes at the cost of increased computational power, higher resolutions demand greater computational resources. \gls{dr} can highly impact the models performance especially in challenging light conditions. It was found that \gls{hdr} can result in better performance than \gls{sdr}. Additionally, sensor size can also influence the performance of the \gls{od} model, where larger sensors can either increase resolution or enhance low-light performance. The final parameter to consider is frame rate. Frame rate is crucial for real-time detection, as higher \gls{fps} helps minimize motion blur. A well-balanced selection of these parameters ensures an optimal \gls{cs} for \gls{dl} applications.
