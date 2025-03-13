@@ -937,6 +937,30 @@
       \verb https://lamphq.com/illuminance-vs-luminance/
       \endverb
     \endentry
+    \entry{Artifact}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=48a6aeca11f1f1a9fd4c11046a54459c}{%
+           family={Mullerova},
+           familyi={M\bibinitperiod},
+           given={Vera},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{48a6aeca11f1f1a9fd4c11046a54459c}
+      \strng{fullhash}{48a6aeca11f1f1a9fd4c11046a54459c}
+      \strng{fullhashraw}{48a6aeca11f1f1a9fd4c11046a54459c}
+      \strng{bibnamehash}{48a6aeca11f1f1a9fd4c11046a54459c}
+      \strng{authorbibnamehash}{48a6aeca11f1f1a9fd4c11046a54459c}
+      \strng{authornamehash}{48a6aeca11f1f1a9fd4c11046a54459c}
+      \strng{authorfullhash}{48a6aeca11f1f1a9fd4c11046a54459c}
+      \strng{authorfullhashraw}{48a6aeca11f1f1a9fd4c11046a54459c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{04}
+      \field{title}{HDR Image Artifact Compensation}
+      \field{year}{2015}
+    \endentry
     \entry{Sen_size_chart}{online}{}{}
       \name{author}{1}{}{%
         {{hash=58e7748782908e67a56c927566622786}{%
