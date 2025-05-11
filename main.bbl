@@ -1057,6 +1057,104 @@
       \field{type}{Degree Project in Computer Science and Engineering, First Cycle}
       \field{year}{2024}
     \endentry
+    \entry{Cognex_Camera}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=690de9a162c460abbc26442f306ca372}{%
+           family={Cognex},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{690de9a162c460abbc26442f306ca372}
+      \strng{fullhash}{690de9a162c460abbc26442f306ca372}
+      \strng{fullhashraw}{690de9a162c460abbc26442f306ca372}
+      \strng{bibnamehash}{690de9a162c460abbc26442f306ca372}
+      \strng{authorbibnamehash}{690de9a162c460abbc26442f306ca372}
+      \strng{authornamehash}{690de9a162c460abbc26442f306ca372}
+      \strng{authorfullhash}{690de9a162c460abbc26442f306ca372}
+      \strng{authorfullhashraw}{690de9a162c460abbc26442f306ca372}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-05-11}
+      \field{title}{Specifications for the In-Sight 9000 vision series}
+      \verb{urlraw}
+      \verb https://www.cognex.com/de-de/products/machine-vision/2d-machine-vision-systems/in-sight-9000-series/specifications
+      \endverb
+      \verb{url}
+      \verb https://www.cognex.com/de-de/products/machine-vision/2d-machine-vision-systems/in-sight-9000-series/specifications
+      \endverb
+    \endentry
+    \entry{IBM_Transfer_Learning}{online}{}{}
+      \name{author}{2}{}{%
+        {{hash=28036c3883d75a8886c3ff73a4b2dde1}{%
+           family={Murel},
+           familyi={M\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0b0ee043c5d5ce373995f25c08671606}{%
+           family={Kavlakoglu},
+           familyi={K\bibinitperiod},
+           given={Eda},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{b2fbd0b4d46f41ed3b4a51162bfa10ea}
+      \strng{fullhash}{b2fbd0b4d46f41ed3b4a51162bfa10ea}
+      \strng{fullhashraw}{b2fbd0b4d46f41ed3b4a51162bfa10ea}
+      \strng{bibnamehash}{b2fbd0b4d46f41ed3b4a51162bfa10ea}
+      \strng{authorbibnamehash}{b2fbd0b4d46f41ed3b4a51162bfa10ea}
+      \strng{authornamehash}{b2fbd0b4d46f41ed3b4a51162bfa10ea}
+      \strng{authorfullhash}{b2fbd0b4d46f41ed3b4a51162bfa10ea}
+      \strng{authorfullhashraw}{b2fbd0b4d46f41ed3b4a51162bfa10ea}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{12}
+      \field{month}{2}
+      \field{note}{Accessed: 2025-02-18}
+      \field{title}{What is Transfer Learning?}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ibm.com/think/topics/transfer-learning
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/think/topics/transfer-learning
+      \endverb
+    \endentry
+    \entry{AIMultiple_Computer_Vision_Training_Data}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c6996972108b0b0fd4a6e33b99346476}{%
+           family={Dilmegani},
+           familyi={D\bibinitperiod},
+           given={Cem},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c6996972108b0b0fd4a6e33b99346476}
+      \strng{fullhash}{c6996972108b0b0fd4a6e33b99346476}
+      \strng{fullhashraw}{c6996972108b0b0fd4a6e33b99346476}
+      \strng{bibnamehash}{c6996972108b0b0fd4a6e33b99346476}
+      \strng{authorbibnamehash}{c6996972108b0b0fd4a6e33b99346476}
+      \strng{authornamehash}{c6996972108b0b0fd4a6e33b99346476}
+      \strng{authorfullhash}{c6996972108b0b0fd4a6e33b99346476}
+      \strng{authorfullhashraw}{c6996972108b0b0fd4a6e33b99346476}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{10}
+      \field{month}{2}
+      \field{note}{Accessed: 2025-02-18}
+      \field{title}{7 Steps to Obtain Computer Vision Training Data in 2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://research.aimultiple.com/computer-vision-training-data/
+      \endverb
+      \verb{url}
+      \verb https://research.aimultiple.com/computer-vision-training-data/
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

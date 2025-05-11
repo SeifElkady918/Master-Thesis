@@ -1,7 +1,41 @@
 
 
 \chapter{Methodology} \label{ch:methodology}
-In this chapter ........
+This chapter defines the methodology used to develop the framework for testing the \gls{db}. The chapter is divided into several sections, each focusing on a specific aspect of the methodology. The first section introduces the development process as a whole, including a detailed plan with measurable milestones to ensure a systematic and robust development. The  second section discusses the first milestone which describes the test setup, including \gls{cs}, \gls{sw} algorithm, and \gls{hil} system. The third section provides an overview of the \gls{ds} used for training and testing the model, including data collection, annotation, and preprocessing techniques. Furthermore it discusses the \gls{od} algorithm and its pipeline, including the selection of a pre-trained model and the training process. Finally, the fourth section covers integration techniques, including algorithm integration with \gls{cs} and synchronization with \gls{hil} system.
+
+\section{Introduction}
+The methodology used in this project is devided over 3 main milestones. The goal is to develop an \gls{od} model that can accurately detect and classify objects in the KTM \gls{db}. The first milestone focuses on the test setup, which includes the selection of a suitable \gls{cs}, light control, and the integration of a \gls{hil} system. The goal of this milestone is to develope a complete closed loop setup that is ready to integrate the model and run the detection process in the test environment. The second milestone involves the preparation of a \gls{ds} in an automated way using photoshop files, peform annotations, preprocessing and augmantation to increase model generalization. Furthermore, the  milestone includes the training of the chosen \gls{od} model using the prepared \gls{ds} and testing its performance on camera pictures from the \gls{cs}. The third milestone focuses on the integration of the trained \gls{od} model with the \gls{sw} that synchronizes with the \gls{hil} system.
+
+\section{Test Setup}
+The test setup is a crucial part of the project as it provides the environment in which the \gls{db} will be tested and evaluated. The setup includes the selection of a suitable \gls{cs}, light control, and the integration of a \gls{hil} system. The goal of this milestone is to develop a complete closed loop setup that is ready to integrate the model and run the detection process in the test environment. The following sections provide an overview of the test setup, including the camera system, light control, and \gls{hil} integration.
+
+\subsection{Light Control}
+To ensures that the \gls{cs} captures images under consistent lighting conditions, a light control system is an essential part of the test setup. This is important for the performance of the \gls{od} model, as variations in lighting can significantly affect the quality of the detection model. The light control system should be capable of providing adjustable and uniform illumination across the entire field of view of the camera. Additionally, it should prevent any external light sources from interfering with the captured images, this is important to ensure that no glare or reflections are present in the images, which can lead to false detections or misclassifications.
+
+KTM uses a light control system that consists of a box with alluminum frame and black walls to prevent any external light or light reflections. The box is equipped with a set of LED lights that can be adjusted to provide the desired level of illumination. The lights are positioned to ensure that the entire field of view of the camera is evenly illuminated, and they can be controlled remotely to adjust the brightness and color temperature as needed. This allows for complete control over the lighting conditions during the testing process, ensuring that the images captured by the camera are of high quality and suitable for the \gls{od} model. Figure \ref{LightControl} shows the light control system used in the test setup.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Figures/Light_control.png}
+    \caption{Light control system used in the test setup.}
+    \label{LightControl}
+\end{figure}
+
+The box provides a mounting structure for the \gls{cs} to ensure that the camera is positioned correctly and securely during the testing process. It also includes a mounting structure for the the \gls{db} to ensure that the distance between the camera and the \gls{db} is consistent. Additionally, a cable inlet is provided to allow for the connection of the \gls{cs} and the \gls{db} without compromising the light control system.
+
+
+\subsection{Camera System}
+The \gls{cs} is an important component of the test setup as it captures images of the \gls{db} for testing and evaluation. It should be capable of capturing high-resolution images with a wide field of view to ensure that all relevant objects are included in the captured frames. Since a light control system is used, the \gls{cs} does not need to be highly sensitive to light variations and since the \gls{db} is a static object, the camera does not need to be highly sensitive to motion blur.
+
+Due to KTM budget cuts and its financial situation at the time of the project implementation, it was recommended to use the available \gls{cs}. The \gls{cs} used in this project is a high-resolution camera provided by Cognex, a company specoialized in \gls{cs}s for industrial usecases. The camera is capable of capturing images at a resolution of up to 12 mega pixels (4096 x 3000) pixels, which is sufficient for the \gls{od} model to detect and classify objects accurately \cite{Cognex_Camera}. The camera provides a varienty of communication interfaces, including Ethernet, which allows for easy integration with the \gls{sw} to capture and retrieve images smoothly through \gls{telnet} and \gls{ftp} protocols. Figure \ref{Cognex_Camera} shows the \gls{cs} used in the test setup.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/In-Sight 9000 in hand.jpg}
+    \caption{Cognex \gls{cs} used in the test setup \cite{Cognex_Camera}.}
+    \label{Cognex_Camera}
+\end{figure}
+
 
 \section{Dataset}
 A \gls{ds} could be defined as a structured collection of data that could be used for analysis, modeling and decision making. \gls{ds} exist in various formats, including numerical values, text, images and videos. In the scope of \gls{dl} and \gls{od}, a \gls{ds} is essential for training, validating and testing models. Moreover, the performance of an \gls{od} model highly depends on the quality and volume of the data available. Therefore, \gls{ds} collection and preparation is normally considered as the backbone of a high performance \gls{od} model. In \gls{od}, \gls{ds} primarily consist of images or video frames annotated with bounding boxes and labeled by classes to define the locations and categories of objects. For general \gls{od} tasks, one can use existing \gls{ds}s such as COCO, PASCAL VOC, and ImageNet which contain thousands of standardized and annotated images and video frames across multiple classes which are released over the last years. On the other hand, for solving highly specific tasks, a custom \gls{ds} may be required to train the model, making this step very complicated and time consuming step. However, using transfer learning and pre-trained models have reduced the need to collect thousands of images, as training with just a few hundred samples can result in a very satisfactory performance \cite{IBM_Transfer_Learning}. Additionally, modern annotation \gls{sw} available and different augmentation techniques help automate the process and scale up the \gls{ds} volume to deliver the best results. In this section, \gls{ds} collection, annotation and preprocessing techniques are discussed to collect high quality and volume \gls{ds} \cite{oD_Review}.
