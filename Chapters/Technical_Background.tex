@@ -232,7 +232,7 @@ After convolution, a Rectified Linear Unit (ReLU) function is applied to introdu
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.9\textwidth]{Figures/CNN_CL.PNG} 
+    \includegraphics[width=0.9\textwidth]{Figures/CNN_CL.PNG}
     \caption{Convolutional process and dot product calculation of an input image \cite{ibm_cnn}.}
     \label{cnn_cl}
 \end{figure}
@@ -387,8 +387,11 @@ The idea of the one stage detectors is to increase the speed of the detection an
     \end{figure}
 
      Experiments demonstrate that LADet is very effective on PASCAL VOC and MS COCO datasets. Its performance strikes an impressive balance between accuracy and efficiency \cite{LADet}.
-     
+
 \end{enumerate}
+
+\subsection{Dataset Preparation}
+A \gls{ds} could be defined as a structured collection of data that could be used for analysis, modeling and decision making. \gls{ds} exist in various formats, including numerical values, text, images and videos. In the scope of \gls{dl} and \gls{od}, a \gls{ds} is essential for training, validating and testing models. Moreover, the performance of an \gls{od} model highly depends on the quality and volume of the data available. Therefore, \gls{ds} collection and preparation is normally considered as the backbone of a high performance \gls{od} model. In \gls{od}, \gls{ds} primarily consist of images or video frames annotated with bounding boxes and labeled by classes to define the locations and categories of objects. For general \gls{od} tasks, one can use existing \gls{ds}s such as COCO, PASCAL VOC, and ImageNet which contain thousands of standardized and annotated images and video frames across multiple classes which are released over the last years. On the other hand, for solving highly specific tasks, a custom \gls{ds} may be required to train the model, making this step very complicated and time consuming step. However, using transfer learning and pre-trained models have reduced the need to collect thousands of images, as training with just a few hundred samples can result in a very satisfactory performance \cite{IBM_Transfer_Learning}. Additionally, modern annotation \gls{sw} available and different augmentation techniques help automate the process and scale up the \gls{ds} volume to deliver the best results. In this section, \gls{ds} collection, annotation and preprocessing techniques are discussed to collect high quality and volume \gls{ds} \cite{oD_Review}.
 
 \subsection{Conclusion}
 The evolution of \gls{od} techniques from traditional \gls{ml} methods to modern \gls{dl} approaches has revolutionized the field. \gls{dl}-based detectors have significantly improved the accuracy, efficiency and adaptability of \gls{od} systems. This revolution has opened new possibilities in different fields. Traditional methods like \gls{hog} and \gls{dpm} have been replaced by more sophisticated models like \gls{rcnn}, \gls{ssd} and \gls{yolo}, which offer better performance and faster processing speeds. Moreover, they are easier to implement, available in wider range and more scalable. When merging these techniques with the right \gls{cs} and the right environmental setup, the results can be very promising. The next section will discuss the selection criteria of camera systems and how to choose the right one for a specific project.

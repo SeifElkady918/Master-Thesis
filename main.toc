@@ -37,27 +37,28 @@
 \contentsline {section}{\numberline {3.2}Test Setup}{37}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Light Control}{37}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Camera System}{38}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Dataset}{39}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Data Collection}{39}{subsection.3.3.1}%
-\contentsline {subsubsection}{Understanding Data Requirements}{39}{subsubsection*.36}%
-\contentsline {subsubsection}{\gls {dc} Method Selection}{40}{subsubsection*.38}%
-\contentsline {subsubsection}{High Quality Data Preparation}{41}{subsubsection*.39}%
-\contentsline {subsection}{\numberline {3.3.2}Data Annotation And Labeling}{42}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Dataset Preprocessing}{42}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Augmentation Techniques}{42}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Object Detection And Classification Algorithm}{42}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Overview Of Object Detection Pipeline}{42}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Selection Of the Pretrained Model}{42}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Data Preprocessing And Augmentation}{42}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Model Fine-Tuning And Training Process}{43}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Post-Processing And Object Classification}{43}{subsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.4.6}Model Evaluation Metrics}{43}{subsection.3.4.6}%
-\contentsline {section}{\numberline {3.5}Test Setup}{43}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Camera System}{43}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Light Control And Mounting}{43}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Hardware In The Loop System}{43}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Integration Techniques}{43}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Algorithm Integration With Camera System}{44}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Synchronization With Hardware In The Loop System}{44}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Data Flow And Processing Pipeline}{44}{subsection.3.6.3}%
-\contentsline {chapter}{\numberline {4}Conclusion And Future Work}{45}{chapter.4}%
+\contentsline {subsection}{\numberline {3.2.3}Hardware In The Loop System}{40}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Dataset}{40}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Data Collection}{40}{subsection.3.3.1}%
+\contentsline {subsubsection}{Understanding Data Requirements}{40}{subsubsection*.37}%
+\contentsline {subsubsection}{\gls {dc} Method Selection}{41}{subsubsection*.39}%
+\contentsline {subsubsection}{High Quality Data Preparation}{42}{subsubsection*.40}%
+\contentsline {subsection}{\numberline {3.3.2}Data Annotation And Labeling}{43}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Dataset Preprocessing}{43}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Augmentation Techniques}{43}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Object Detection And Classification Algorithm}{43}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Overview Of Object Detection Pipeline}{43}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Selection Of the Pretrained Model}{43}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Data Preprocessing And Augmentation}{44}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Model Fine-Tuning And Training Process}{44}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Post-Processing And Object Classification}{44}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Model Evaluation Metrics}{44}{subsection.3.4.6}%
+\contentsline {section}{\numberline {3.5}Test Setup}{44}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Camera System}{44}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Light Control And Mounting}{44}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Hardware In The Loop System}{44}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Integration Techniques}{45}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Algorithm Integration With Camera System}{45}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Synchronization With Hardware In The Loop System}{45}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Data Flow And Processing Pipeline}{45}{subsection.3.6.3}%
+\contentsline {chapter}{\numberline {4}Conclusion And Future Work}{46}{chapter.4}%
