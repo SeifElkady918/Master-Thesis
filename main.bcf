@@ -2378,8 +2378,8 @@
     <bcf:citekey order="3" intorder="1">ML_SW_Testing</bcf:citekey>
     <bcf:citekey order="4" intorder="1">leloudas2023</bcf:citekey>
     <bcf:citekey order="5" intorder="1">leloudas2023</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">leloudas2023</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">leloudas2023</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">V_model</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">V_model</bcf:citekey>
     <bcf:citekey order="8" intorder="1">shiwangi2014</bcf:citekey>
     <bcf:citekey order="9" intorder="1">shiwangi2014</bcf:citekey>
     <bcf:citekey order="10" intorder="1">leloudas2023</bcf:citekey>
@@ -2519,6 +2519,15 @@
     <bcf:citekey order="141" intorder="1">Sen_size_chart</bcf:citekey>
     <bcf:citekey order="142" intorder="1">Fisher_CMOS_Types_2024</bcf:citekey>
     <bcf:citekey order="143" intorder="1">FPS</bcf:citekey>
+    <bcf:citekey order="144" intorder="1">HiL_Testing</bcf:citekey>
+    <bcf:citekey order="145" intorder="1">HiL_Testing</bcf:citekey>
+    <bcf:citekey order="146" intorder="1">V_model</bcf:citekey>
+    <bcf:citekey order="147" intorder="1">V_model</bcf:citekey>
+    <bcf:citekey order="148" intorder="1">HiL_Testing</bcf:citekey>
+    <bcf:citekey order="149" intorder="1">HiL_Testing</bcf:citekey>
+    <bcf:citekey order="150" intorder="1">HiL_Testing</bcf:citekey>
+    <bcf:citekey order="151" intorder="1">HiL_Testing</bcf:citekey>
+    <bcf:citekey order="152" intorder="1">HiL_Testing</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -34,3 +34,8 @@
 \contentsline {subsection}{\numberline {1.4.4}Sensor Size}{37}{subsection.1.4.4}%
 \contentsline {subsection}{\numberline {1.4.5}Frame Rate}{38}{subsection.1.4.5}%
 \contentsline {subsection}{\numberline {1.4.6}Summary}{39}{subsection.1.4.6}%
+\contentsline {section}{\numberline {1.5}Hardware in the Loop}{40}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Fundamentals of Hardware in the Loop Simulation}{40}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2} Comparison of Testing Approaches}{41}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Integration Techniques}{42}{subsection.1.5.3}%
+\contentsline {section}{\numberline {1.6}Summary}{43}{section.1.6}%

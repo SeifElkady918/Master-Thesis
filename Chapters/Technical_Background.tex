@@ -1,5 +1,5 @@
 \chapter{Technical Background}
-This chapter explores the essential elements of testing and \gls{od}, highlighting their role in \gls{sw} development and validation. It begins with an overview of motorbike \gls{db} and the need for reliable testing methods to ensure safety and functionality. The chapter then introduces \gls{od} techniques and how they are used in \gls{db} testing in a \gls{hil} setup. The discussion then shifts to testing, including its importance, methodologies, and levels, and provides a comparison between manual and automated testing techniques. Additionally, the chapter discusses \gls{od}, focusing on both traditional and \gls{dl} based approaches, and their application in testing. Finally, it addresses key considerations for selecting \gls{cs}s and their influence on the performance of \gls{od} algorithms.
+This chapter explores the essential elements of testing and \gls{od}, highlighting their role in \gls{sw} development and validation. It begins with an overview of motorbike \gls{db} and the need for reliable testing methods to ensure safety and functionality. The chapter then introduces \gls{od} techniques and how they are used in \gls{db} testing in a \gls{hil} setup. The discussion then shifts to testing, including its importance, methodologies, and levels, and provides a comparison between manual and automated testing techniques. Additionally, the chapter discusses \gls{od}, focusing on both traditional and \gls{dl} based approaches, and their application in testing. Furthermore, the process of preparing a \gls{ds} for training and testing a \gls{dl} model is also discussed in details. The chapter also addresses key considerations for selecting \gls{cs}s and their influence on the performance of \gls{od} algorithms. Finally, it explores the fundamentals of \gls{hil} systems and integration techniques with other \gls{sw} services.
 
 \section{Dashboard Testing}
 With the current shift in the motorbike industry toward the direction of \gls{sw} defined vehicle, \gls{db} \gls{sw} that provides the rider with a graphical user interface to monitor and control the bike has gained a huge attention from \gls{oem} in the past years to continuously provide a seamless and safe ride experience. As a result, the \gls{db} market is expected to grow from 10.71\$ billion to 18.64\$ billion in the time frame from 2021 to 2028 with a compound annual growth rate of 8.2\% \cite{DL_HMI_SW_V}. Current \gls{db}s not only provide the rider with hardware information such as speed, fuel level and diagnostics but also allow users to interact with the system in real-time through multiple advanced methods like touch, voice control and even hand gesture control.  Riders depend on these systems for essential functions, including smart navigation, connectivity, and even advanced rider assistance.
@@ -35,7 +35,6 @@ Furthermore, the increased volume of vehicular state information and interactive
 
 With the introduction of \gls{dl} techniques, these challenges can be effectively addressed by integrating a \gls{cs} with a \gls{hil} setup and an advanced \gls{dl} based \gls{od} algorithm. In this approach, the \gls{hil}  system sends a signal to the \gls{cs} to capture the actual view of the \gls{db}. The \gls{cs} then transmits the captured image back to the \gls{hil}, where the \gls{od} algorithm processes it by extracting all relevant assets and comparing them against reference values to determine whether the displayed view is correct. Further in this chapter, the concepts of testing, \gls{od} techniques and different \gls{cs} that could be used in such a setup will be discussed in details.
 
-
 \section{Testing}
 Testing plays a vital role in the development phase, serving as an evaluation process for systems or applications to detect flaws, mistakes, or glitches, while also confirming that they align with their intended specifications and operate effectively. This practice is crucial because it guarantees that the product functions as specified, meets user requirements and maintains reliability and efficiency \cite{leloudas2023}.
 
@@ -50,13 +49,13 @@ Within the \gls{sw} testing life cycle, various testing methodologies are employ
     \item \textbf{User acceptance testing}: This level looks at the \gls{sw} from the user's perspective to confirm that it performs as they expect and meets their needs.
 \end{itemize}
 
-These testing levels are known as the testing pyramid. Figure~\ref{TP} illustrates the test pyramid period, the higher the pyramid level, the higher the integration of the test \cite{leloudas2023}.
+These testing levels are followed based on a the V-model. The V-model in \gls{sw} development life cycle is a method that include the testing and validation alongside each development phase. It is based on the idea of a V shape, with the two legs of the V representing the progression of the \gls{sw} development process from requirements gathering and analysis to design, implementation, testing, and maintenance. Figure~\ref{V-model} illustrates the V-model, the higher the product maturity level, the higher the integration of the test \cite{leloudas2023}.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{Figures/Testing_triangle.png}  % Adjust the path and width as needed
-    \caption{Testing pyramid consisting of 4 levels: unit tests, integration tests, system tests, user acceptance test \cite{leloudas2023}}
-    \label{TP}
+    \includegraphics[width=0.7\textwidth]{Figures/V-model.jpg}  % Adjust the path and width as needed
+    \caption{The V-model consisting of four testing levels: unit tests, integration tests, system tests, user acceptance test \cite{V_model}.}
+    \label{V-model}
 \end{figure}
 
 Testing could be defined as a set of steps that are performed in order to validate or evaluate all aspects of a product. It could be done manually in a systematic approach or automated using \gls{sw} scripts \cite{shiwangi2014}. In the following parts of this section, manual and automated testing are explained and compared.
@@ -79,7 +78,7 @@ With the growing number of functionalities and interfaces provided by the new ge
 
 The difference between automated and manual \gls{sw} testing lies in their applications and benefits. Table~\ref{tab:comparison automated vs manual testing} provides a summarized comparison of automated and manual testing. It highlights their key differences, unique advantages and applications in \gls{sw} testing. Automated testing is recommended for preventing new errors in previously tested modules. On the other hand, manual testing uses the knowledge of the tester to concentrate on parts of the system thought to be more likely to have problems to excel in identifying new and unforeseen errors. These methods complement each other; automated testing allows for extensive test case coverage in a short period, while manual testing applies human insight to critically assess and target specific, potentially problematic parts of the system \cite{shiwangi2014}. 
 
-\begin{table}[ht]
+\begin{table}[!ht]
 \centering
 \caption{Comparison between Automated and Manual Testing \cite{leloudas2023, shiwangi2014}}
 \label{tab:comparison automated vs manual testing}
@@ -110,13 +109,12 @@ This setup requires a significant initial investment in terms of time and money,
 
 Further in this chapter the \gls{od} techniques will be discussed in details, as well as different parameters to consider when choosing a \gls{cs}. This discussion will help in understanding and deciding on the appropriate \gls{cs} and \gls{od} algorithm to use for capturing and analyzing the images, to contribute to the development of a complete automated test setup for \gls{db} testing.
 
-
 \section{Object Detection}
 Recognizing objects in a real-world environment using a machine presents a significant challenge. Computer vision, a specialized field within computer science, provides machines with the capability to perceive, identify, and interpret objects from images and videos. Videos are made up of a series of arranged images, called frames, displayed at a specific rate. While humans can identify objects and their positions within visual data by using their eyes to capture images and transmitting them to the brain for processing, machines rely on \gls{cs} to acquire visual input and employ complex algorithms to process the data and achieve similar capabilities. This technology has been a critical area of research for decades, enabling advancements in applications such as face recognition, pedestrian tracking, security systems, vehicle identification, and autonomous driving \cite{oD_Review}. Recently, \gls{od} has created new opportunities for test engineers to take advantage of these techniques in the field of \gls{db} testing. By integrating \gls{od} methods, engineers can develop more efficient and reliable testing processes, ultimately ensuring the delivery of the highest quality results to the end customer.
 
 \gls{od} is a fundamental process in computer vision, it is defined as the process of integrating object classification and localization to identify and locate multiple objects within an image or video frames. Object classification assigns labels to objects by determining their categories, while object localization identifies their positions. An example of an object classification and localization is shown in figure~\ref{Single_object}. In a normal object recognition workflow, an image is analyzed to detect objects, assign labels corresponding to their categories, and calculate the probability for each identified class. Unique object features, such as the equal sides of a square, play a critical role in determining their categories, helping to accurately classify and distinguish between various objects within the image \cite{oD_Review}.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/Object_detection.PNG} 
     \caption{Single \gls{od} Example \cite{oD_Review}}
@@ -125,7 +123,7 @@ Recognizing objects in a real-world environment using a machine presents a signi
 
 Choosing the right \gls{od} technique for \gls{db} testing is a vital component of this project to ensure high accuracy and reliable output. The study will explore a range of techniques, including both traditional methods and modern \gls{dl}-based approaches. It will evaluate most popular detection models, analyzing their workflows and identifying their limitations. Additionally, the research will address challenges specific to this domain and investigate potential future advancements to enhance \gls{od} in \gls{db} testing. Figure~\ref{OD_Mindmap} shows how the \gls{od} is divided and structured in this study, which will be further described in details in this section.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/OD_Mindmape.PNG} 
     \caption{\gls{od} structure \cite{oD_Review}}
@@ -167,7 +165,7 @@ While the \gls{vj} detector was a groundbreaking approach for \gls{od} it had so
 \subsubsection{Histogram Of Oriented Gradients}
  \gls{hog} is one of the most famous feature descriptors. Feature descriptors are methods that transform raw data into a more simplified form that contains only the most important features to minimize the required computational power. \gls{hog} describes the shape and appearance of the object by analyzing the distribution of edge orientations. The \gls{hog} method calculates the gradient magnitude and orientation for each pixel in an image and partitions the image into small cells, unlike simple edge features that only detect edges without direction. The image is divided into smaller regions (localized portions), and gradients and orientations are computed for each region. A histogram is then generated for each region based on these gradients and orientations \cite{HOG}. Figure~\ref{HOG_image} shows the comparison between the input image and the \gls{hog} image.
  
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/HOG_Histogram_image.PNG} 
     \caption{Input image and \gls{hog} image \cite{HOG}}
@@ -200,7 +198,7 @@ While both \gls{ml} and \gls{dl} can be trained on labeled or unlabeled data, \g
 
 At the core of \gls{dl} are artificial \gls{nn}s, consisting of interconnected node layers (neurons). These networks typically include an input layer, one or more hidden layers, and an output layer. Each neuron is connected to others through weighted connections and has an associated threshold. When a neuron's output exceeds its threshold, it becomes activated, passing data to the next layer; otherwise, no information is transmitted \cite{ibm_cnn}. During the training process, the weights between these nodes are iteratively adjusted to minimize errors and improve performance using the activation functions. This optimization process can be achieved using approaches such as supervised learning, unsupervised learning, or reinforcement learning depending on the problem at hand  \cite{DL_VS_ML} \cite{oD_Review}. Figure~\ref{DNN} shows a schematic of a \gls{dnn}. 
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.9\textwidth]{Figures/deepLearn_2_EN.png} 
     \caption{A \gls{dnn} with multiple layers, illustrating the flow of data from input to output through interconnected hidden layers \cite{DNN_pic}.}
@@ -214,7 +212,7 @@ The \gls{nn}s mentioned above are the simplest form of \gls{nn}s and are known a
 \subsection{Convolutional Neural Networks}
 \gls{cnn}s often consists of 3 main types of layers, \gls{cl}, \gls{pl} and \gls{fcl}. The first layer is always the \gls{cl}, it could be then followed by another \gls{cl} or a \gls{pl} and the final layer is always an \gls{fcl}. Figure~\ref{full_cnn} shows a schematic of a \gls{cnn} architecture. As a \gls{cnn} processes an image through these multiple layers, it gradually builds a more detailed understanding of the content of the image. The initial layers detect basic features like edges and colors, while deeper layers analyze more complex patterns and structures. As the data moves through the network, it begins to recognize larger shapes and meaningful components, ultimately leading to the identification of the entire object.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.9\textwidth]{Figures/Full_cnn.PNG} 
     \caption{\gls{cnn} architecture \cite{Full_CNN}.}
@@ -230,7 +228,7 @@ The \gls{cl} is the fundamental component of a CNN, where most computations occu
 \end{itemize}   
 After convolution, a Rectified Linear Unit (ReLU) function is applied to introduce non-linearity, helping the model learn complex patterns efficiently \cite{ibm_cnn}.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.9\textwidth]{Figures/CNN_CL.PNG}
     \caption{Convolutional process and dot product calculation of an input image \cite{ibm_cnn}.}
@@ -265,7 +263,7 @@ Two-stage detectors, also known as multi-stage detectors, typically comprise two
 
     This approach not only classifies objects but also provides bounding boxes around detected objects. However, \gls{rcnn}s come with some limitations. Features are extracted from each proposal separately using a deep \gls{cnn}, leading to redundant computations and making the training and testing processes time-consuming. Additionally, the three steps of this method are independent and operate separately, which makes it challenging to achieve a globally optimal solution. Lastly, in images with complex backgrounds, the selective search algorithm struggles to generate effective proposals because it relies solely on low-level features \cite{oD_Review}.
     
-    \begin{figure}[ht]
+    \begin{figure}[!ht]
         \centering
         \includegraphics[width=0.9\textwidth]{Figures/RCNN.PNG} 
         \caption{Steps involved in \gls{rcnn} detector \cite{oD_Review}.}
@@ -276,7 +274,7 @@ Two-stage detectors, also known as multi-stage detectors, typically comprise two
     
     \gls{spp-net} achieves accuracy comparable to \gls{rcnn} while being 20 times faster. However, it has its downsides. One key limitation is that it does not take full advantage of the \gls{cnn}. Another drawback lies in its multi-stage training process, which can complicate implementation. Despite these limitations, \gls{spp-net} excels at handling images with different scales and aspect ratios. It effectively preserves image details and avoids distortions that might otherwise compromise the performance of the model \cite{oD_Review}.
 
-    \begin{figure}[ht]
+    \begin{figure}[!ht]
         \centering
         \includegraphics[width=0.9\textwidth]{Figures/SPP.PNG} 
         \caption{Steps involved in \gls{spp-net} detector \cite{oD_Review}.}
@@ -287,7 +285,7 @@ Two-stage detectors, also known as multi-stage detectors, typically comprise two
     \item \textbf{Fast \gls{rcnn}:} Further improvements were made to \gls{rcnn} and SPPNet and a new architecture was introduced called Fast \gls{rcnn}. Fast \gls{rcnn} processes the entire input image to produce feature maps using a convolutional layer. It simplifies the design by removing multi-level pooling layers and instead uses a single grid layer. An \gls{roi} pooling layer is introduced to extract a fixed length feature vector, that acts as a simplified version of the SPP layer with just one pyramid level \cite{oD_Review}.
 
     Each feature vector is processed through a sequence of \gls{fcl}, and the final output is fed into two layers: the softmax layer and the bounding box regression layer. The softmax layer calculates probabilities for all object classes and a background class, while the bounding box regression layer generates four real values to define the bounding box for each detected object. Figure~\ref{Fast_RCNN} shows the architecture used to developed a Fast \gls{rcnn} \cite{oD_Review}.
-    \begin{figure}[ht]
+    \begin{figure}[!ht]
         \centering
         \includegraphics[width=0.9\textwidth]{Figures/Fast-RCNN.PNG} 
         \caption{Fast \gls{rcnn} architecture \cite{oD_Review}.}
@@ -310,7 +308,7 @@ The idea of the one stage detectors is to increase the speed of the detection an
 
     To improve efficiency, \gls{yolo} assigns one bounding box predictor per object based on the highest intersection over union with the ground truth. This specialization enhances recall by focusing on specific object sizes, shapes, and classes. \gls{nms} is then applied as a post-processing step to eliminate redundant bounding boxes, ensuring that only one box is retained per object \cite{YOLO}. Figure~\ref{YOLO} explains the architecture of \gls{yolo}. \gls{yolo} kept on developing over the years and many versions are published until \gls{yolo}v11. Table~\ref{tab:yolo_versions} summarizes all \gls{yolo} versions and their key improvements.
 
-    \begin{figure}[ht]
+    \begin{figure}[!ht]
         \centering
         \includegraphics[width=0.9\textwidth]{Figures/YOLO.PNG} 
         \caption{\gls{yolo} Architecture that consists of 24 convolutional layers followed by 2 \gls{fcl}s \cite{YOLO}.}
@@ -319,41 +317,42 @@ The idea of the one stage detectors is to increase the speed of the detection an
 
 
     \begin{table}[h!]
-    \centering
-    \begin{tabular}{|c|p{12cm}|}
-    \hline
-    \textbf{Version} & \textbf{Key Features and Improvements} \\
-    \hline
-    \gls{yolo}v2 (2016) & Added batch normalization, anchor boxes, and dimension clusters to improve the original model. \\
-    \hline
-    \gls{yolo}v3 (2018) & Introduced a more efficient backbone network, multiple anchors, and SPP for enhanced performance. \\
-    \hline
-    \gls{yolo}v4 (2020) & Featured mosaic data augmentation, a new anchor-free detection head, and a new loss function. \\
-    \hline
-    \gls{yolo}v5 & Included hyperparameter optimization, experiment tracking, and automatic export to popular formats for better performance. \\
-    \hline
-    \gls{yolo}v6 (2022) & Open-sourced by Meituan and used in autonomous delivery robots. \\
-    \hline
-    \gls{yolo}v7 & Added pose estimation capabilities, including support for the COCO keypoints dataset. \\
-    \hline
-    \gls{yolo}v8 (2023) & Released by Ultralytics with improved performance, flexibility, and efficiency, supporting various vision \gls{ai} tasks. \\
-    \hline
-    \gls{yolo}v9 & Introduced Programmable Gradient Information (PGI) and the Generalized Efficient Layer Aggregation Network (GELAN). \\
-    \hline
-    \gls{yolo}v10 & Developed by Tsinghua University, featuring an End-to-End head that eliminates the need for \gls{nms}. \\
-    \hline
-    \gls{yolo}v11 & The latest version by Ultralytics, delivering state-of-the-art performance across multiple tasks like detection, segmentation, pose estimation, tracking, and classification. \\
-    \hline
-    \end{tabular}
-    \caption{Summary of \gls{yolo} versions and their Key Features \cite{ultralytics_yolo_history}}
-    \label{tab:yolo_versions}
+        \centering
+        \caption{Summary of \gls{yolo} versions and their key features \cite{ultralytics_yolo_history}}
+        \label{tab:yolo_versions}
+        \begin{tabularx}{\textwidth}{|c|X|}
+        \hline
+        \textbf{Version} & \textbf{Key Features and Improvements} \\
+        \hline
+        \gls{yolo}v2 (2016) & Added batch normalization, anchor boxes, and dimension clusters to improve the original model. \\
+        \hline
+        \gls{yolo}v3 (2018) & Introduced a more efficient backbone network, multiple anchors, and SPP for enhanced performance. \\
+        \hline
+        \gls{yolo}v4 (2020) & Featured mosaic data augmentation, a new anchor-free detection head, and a new loss function. \\
+        \hline
+        \gls{yolo}v5 & Included hyperparameter optimization, experiment tracking, and automatic export to popular formats for better performance. \\
+        \hline
+        \gls{yolo}v6 (2022) & Open-sourced by Meituan and used in autonomous delivery robots. \\
+        \hline
+        \gls{yolo}v7 & Added pose estimation capabilities, including support for the COCO keypoints dataset. \\
+        \hline
+        \gls{yolo}v8 (2023) & Released by Ultralytics with improved performance, flexibility, and efficiency, supporting various vision \gls{ai} tasks. \\
+        \hline
+        \gls{yolo}v9 & Introduced Programmable Gradient Information (PGI) and the Generalized Efficient Layer Aggregation Network (GELAN). \\
+        \hline
+        \gls{yolo}v10 & Developed by Tsinghua University, featuring an End-to-End head that eliminates the need for \gls{nms}. \\
+        \hline
+        \gls{yolo}v11 & The latest version by Ultralytics, delivering state-of-the-art performance across multiple tasks like detection, segmentation, pose estimation, tracking, and classification. \\
+        \hline
+        \end{tabularx}
     \end{table}
+    
 
     \item \textbf{\gls{ssd}:} The \gls{ssd} was introduced in November 2016 and marked a significant milestone in \gls{od}. It achieved at this time the highest \gls{map} at a relatively high \gls{fps} on standard datasets like PascalVOC and COCO as shown in figure~\ref{SSD}. The name of the architecture reflects its key principles: "Single Shot" indicates that object localization and classification are performed in a single forward pass through the network, while "MultiBox" refers to a bounding box regression technique developed by Szegedy et al. The "Detector" aspect highlights its capability to both detect and classify objects simultaneously \cite{SSD}.
 
     \gls{ssd} is built on the VGG-16 architecture but discards the \gls{fcl}s in favor of auxiliary convolutional layers starting from conv6. This design enables the model to extract features at multiple scales while progressively reducing the input size for each subsequent layer. VGG-16 was selected as the base network due to its strong performance in high-quality image classification tasks and its effectiveness in improving results through transfer learning \cite{SSD}.
 
-    \begin{figure}[ht]
+    \begin{figure}[!ht]
         \centering
         \includegraphics[width=0.9\textwidth]{Figures/SSD.PNG} 
         \caption{\gls{ssd} Architecture that is based on VGG-16 for \gls{od} with 59 \gls{fps} \cite{SSD}.}
@@ -366,7 +365,7 @@ The idea of the one stage detectors is to increase the speed of the detection an
 
     The network architecture is shown in figure~\ref{Ratina} and includes four components: a bottom-up pathway using a ResNet backbone, a top-down pathway enhanced with feature pyramid network, a classification subnetwork, and a regression subnetwork. The feature pyramid network allows effective feature extraction across multiple scales, facilitating the detection of objects of varying sizes. The classification subnetwork predicts the probabilities of the object class and the anchor boxes, while the regression subnetwork refines the offsets of the bounding box. This multi-scale capability makes RetinaNet particularly effective for detecting small or densely packed objects \cite{oD_Review}.
 
-     \begin{figure}[ht]
+     \begin{figure}[!ht]
         \centering
         \includegraphics[width=0.9\textwidth]{Figures/ratina-net.PNG} 
         \caption{RetinaNet architecture: (a) ResNet backbone generates multi-scale feature maps, (b) Feature Pyramid Network enhances multi-scale feature extraction, (c) classification subnetwork predicts class probabilities, and (d) box subnetwork refines anchor boxes to ground-truth object boxes \cite{oD_Review}.}
@@ -379,7 +378,7 @@ The idea of the one stage detectors is to increase the speed of the detection an
 
      The structure of LADet begins with a backbone network (e.g., DenseNet-169 or VGG-16) extracting multi-level feature maps. These maps are processed through the \gls{afpm}, which includes the Feature Fusion Module. Feature Fusion Module normalizes feature maps to a uniform resolution and fuses them into a unified high-resolution representation. This fusion ensures effective contribution from all scales. Complementary semantic information is added via a channel-wise attention mechanism, refining feature maps further for precise detection. The \gls{lcfm} then predicts object classes and anchor box probabilities using sparse group convolutions, reducing parameter usage while maintaining performance \cite{LADet}. Figure~\ref{LADet} shows an overview of the network structure.
 
-     \begin{figure}[ht]
+     \begin{figure}[!ht]
         \centering
         \includegraphics[width=0.9\textwidth]{Figures/LADet.PNG} 
         \caption{An overview of LADet model. Multi-level feature maps from the backbone network are processed by the \gls{afpm} to create pyramid feature maps. These enhanced maps are then used by the \gls{lcfm} and the box regression subnet to generate classification scores and dense bounding boxes.\cite{LADet}.}
@@ -501,7 +500,7 @@ Area scan cameras are a more cost-effective choice since they are simpler to use
 Camera resolution is a key parameter to be considered when working with \gls{dl} projects. It refers to the number of pixels used to represent an image. Image resolution directly influences the quality of data input into a \gls{dl} model. Higher resolution images provide more detailed information, which can improve the model's performance for tasks such as \gls{od}, image segmentation, and classification. For example, in medical imaging or satellite data analysis, higher resolution can capture fine details that are important for diagnosis or analysis. However, as the resolution increases, so does the computational cost in terms of memory and processing time, making it important to find a balance between image quality and efficiency.
 
 Several studies have investigated the impact of image resolution on \gls{cnn} performance across various fields, including medical imaging. For instance, Thambawita et al. \cite{RES_IMP} conducted an experimental study using the HyperKvasir dataset, which consists of 10,662 endoscopic images covering 23 different gastrointestinal conditions. Their research focused on how changes in image resolution influence \gls{cnn} performance,  particularly in the context of endoscopic image classification. The study focused on image resolutions ranging from 32×32 to 512×512 pixels and evaluated the performance of two \gls{cnn} architectures: ResNet-152 and DenseNet-161. Figure~\ref{RES_COMP} shows the differences in image quality for different image resolutions. 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/RES_COMP.png}  
     \caption{Example of images that were used in the study to show the differences in level of details that are observed from different resolutions. Note that for this figure all pictures are rescaled to the same size to show quality differences \cite{RES_IMP}.}
@@ -521,7 +520,7 @@ In the context of \gls{dl}-based text and object recognition for motorbike \gls{
 
 \gls{dr} is considered one of the most important parameters when choosing a \gls{cs} for \gls{dl} projects especially in the field of \gls{od}. Many studies discussed the impact of \gls{dr} on detecting objects in challenging lighting conditions. for instance, Mukherjee et al. presented for the first time \gls{hdr} imaging to \gls{od}. The study provided a methodology to test and compare the performance of \gls{hdr} and \gls{sdr} trained models under difficult lighting conditions. The authors used for this study Faster \gls{rcnn} and \gls{ssd} models and their findings revealed that models trained on \gls{hdr} data perform 10–12\% better in accuracy than those trained on \gls{sdr} data \cite{HDR}. Figure~\ref{fig:HDR vs SDR} show the comparison presented in the study between \gls{hdr} detection (Figure~\ref{HDR}) and \gls{sdr} Detection (Figure~\ref{SDR}). It is clear that \gls{hdr} trained detectors successfully detected all assets of the picture, while \gls{sdr} failed to detect 4 of the assets.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     % First subfigure
     \begin{subfigure}[b]{0.45\textwidth}
@@ -552,7 +551,7 @@ Another limitation is the occurrence of artifacts, which arise due to the most c
 \subsection{Sensor Size}
 The term sensor size in \gls{cs}s refers to the physical dimensions of the imaging sensor, which captures light and converts it into electrical signals to create digital images. Figure~\ref{Sen_Size_chart} illustrates how sensor size changes between multiple devices. However, is it correct to assume that a larger sensor size automatically results in better image quality with more detail? The answer is not straightforward and depending on the configuration of the pixels in the sensor. 
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/sensor-chart.jpg}  
     \caption{Use case of different sensor sizes and their used application \cite{Sen_size_chart}.}
@@ -581,5 +580,99 @@ In an application such as \gls{db} testing where objects and texts are stationar
 \subsection{Summary}
 It is essential to select the correct \gls{cs} when developing an \gls{od} project, as it can highly influence the results, as discussed earlier. Based on the project requirements, different factors should be considered when choosing the \gls{cs}. The scanning method determines how images are captured. Line scan cameras can be suitable for high speed applications like in production lines. On the other hand, area scan cameras excel in real-time \gls{od}. Moreover, resolution of the \gls{cs} is another important parameter to consider. When resolution increases, more details could be captured and better detection performance could be achieved. However, this comes at the cost of increased computational power, higher resolutions demand greater computational resources. \gls{dr} can highly impact the models performance especially in challenging light conditions. It was found that \gls{hdr} can result in better performance than \gls{sdr}. Additionally, sensor size can also influence the performance of the \gls{od} model, where larger sensors can either increase resolution or enhance low-light performance. The final parameter to consider is frame rate. Frame rate is crucial for real-time detection, as higher \gls{fps} helps minimize motion blur. A well-balanced selection of these parameters ensures an optimal \gls{cs} for \gls{dl} applications.
 
+Having established the importance of selecting appropriate \gls{dl} models and \gls{cs}, the discussion now shifts to how these components can be used within a structured and efficient testing framework. \gls{hil} systems provide a powerful solution for simulating real-world environments and validating the embedded systems under controlled conditions. The following section outlines the fundamental principles of \gls{hil} systems, highlights their advantages and explains how they can be integrated with \gls{dl} models and \gls{cs} to perform automated and repeatable testing processes.
 
+\section{Hardware in the Loop}
+\gls{hil} simulation is a method used in the development and testing of embedded systems. It connects the actual \gls{io} interfaces of the controller hardware to a simulated environment that replicates the physical system. \gls{hil} testing plays a critical role in validating the integration between hardware and \gls{sw}, and it is commonly used in certification processes across industries such as aerospace and automotive. A major advantage of \gls{hil} simulation is its ability to facilitate early testing of control algorithms directly on the hardware. This approach reduces risk and speeds up development, it allow engineers to assess different scenarios and verify \gls{io} connectivity even before the full physical system is available, therefore ensuring system reliability without endangering costly equipment \cite{HiL_Testing}.
+
+In this section, the concept of \gls{hil} systems will be examined in detail. The discussion begins with an overview of how \gls{hil} simulation works, followed by a comparison between \gls{mil}, \gls{sil}, \gls{pil}, and \gls{hil} approaches. Finally, integration techniques between \gls{hil} platform and other software services will be presented. This overview highlights the role of \gls{hil} systems in creating efficient, scalable and reliable testing environments for the \gls{db}.
+
+\subsection{Fundamentals of Hardware in the Loop Simulation}
+\gls{hil} simulation works by connecting real controller hardware to a simulated version of the physical system, also called the plant. This connection uses both analog and digital actual \gls{io} signals to let the controller interact with the virtual environment as if it was real. These connections often include communication protocols like UDP, TCP, CAN or other standards used in specific industries. Having real-world communication interfaces with correct settings, timing, and wiring is a key part of making \gls{hil} testing realistic and reliable \cite{HiL_Testing}. Figure \ref{HiL_Setup} shows a typical \gls{hil} setup.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/HiL_test_setup.png}  % Adjust the path and width as needed
+    \caption{\gls{hil} setup with the plant simulated using a real time module to test a real embedded component \cite{V_model}.}
+    \label{HiL_Setup}
+\end{figure}
+
+\gls{hil} testing involves several key steps to simulate and validate embedded systems before full physical prototypes are available. It starts with modeling the physical system known as the plant using tools like Simulink and Simscape to create a virtual version that mimics real world behavior. This model runs on a real-time simulator, such as those provided by Vector or dSPACE, which acts like a digital twin of the plant. The actual controller hardware, running the control \gls{sw}, is then connected to the simulator through real \gls{io} signals and communication protocols like CAN or Ethernet, allowing it to interact with the virtual system as if it were real \cite{HiL_Testing}.
+
+Throughout the process, the system collects data from both the controller and the simulated plant to provide feedback and adjust responses in real time. This setup allows engineers to run a variety of tests including normal operations and fault conditions to make sure the control algorithms perform reliably and meet the required standards \cite{HiL_Testing}.
+
+\subsection{ Comparison of Testing Approaches}
+\gls{mil}, \gls{sil}, \gls{pil} and \gls{hil} are key techniques used in the verification and validation process of embedded systems. Each technique serves a different purpose in the development cycle, with different fidelities of the simulation environment \cite{HiL_Testing}.
+
+\begin{itemize}
+    \item \textbf{\gls{mil}} is used in the early stages of development to test control algorithms with simulated models of both the controller and the plant. This allows fast design and testing without requiring real hardware or \gls{sw}.
+  
+    \item \textbf{\gls{sil}} involves testing the compiled control algorithm code in a simulated environment. It ensures that the \gls{sw} works as expected when executed and serves as a link between model testing and real-world deployment. \gls{sil} is also used for virtual testing, where additional \gls{sw} components—such as the controller operating system and communication between multiple nodes are simulated, supporting service oriented architectures.
+  
+    \item \textbf{\gls{pil}} tests the control algorithm on the actual processor or a similar target while the environment remains simulated. It helps detect issues with code generation, timing, and processor-specific behavior, making sure the \gls{sw} performs correctly on the final hardware.
+  
+    \item \textbf{\gls{hil}} is used to validate the integration of control algorithms with real hardware. The controller is connected to a real time simulated plant, enabling realistic testing of system behavior, including various operating conditions and faults.
+  \end{itemize}
+
+  To summarize the findings of this comparison, table \ref{loop_comparison} provides a concise overview of controller, connections and plant in for each technique.
+
+  \begin{table}[h!]
+    \centering
+    \caption{Comparison of in-the-loop techniques \cite{HiL_Testing}.}
+    \label{loop_comparison}
+    \begin{tabularx}{\textwidth}{|l|X|X|X|}
+    \hline
+    \textbf{Technique} & \textbf{Controller} & \textbf{Connections} & \textbf{Plant} \\
+    \hline
+    \gls{mil} & Simulated (model) & Virtual & Simulated \\
+    \hline
+    \gls{sil} & Compiled code (\gls{sw}) & Virtual & Simulated \\
+    \hline
+    \gls{pil} & Real processor & TCP/IP or serial & Simulated \\
+    \hline
+    \gls{hil} & Real controller hardware & Analog and digital \gls{io} signals & Simulated in real time \\
+    \hline
+    \end{tabularx}
+    \end{table}
+
+\subsection{Integration Techniques}
+Integrating \gls{hil} systems with other \gls{sw} services is one of the things that makes a \gls{hil} system a very powerful approach for testing sophisticated applications. The system manufacturers normally provide a toolchain to ease the process of interacting with the \gls{hil}. For instance, Vector provide some \gls{sw} tools like Vector CANoe and VTest studio. VTest studio allows for creating tests using test tables for simple straightforward cases, CAPL code for more advanced requirements and .NET framework version 4.7 for more complicated cases. 
+
+The .NET framework provides built-in support for HTTP communication with other \gls{sw} services through its standard libraries, while also allowing integration of external DLL files to extend functionality. In the context of this study, two frameworks are considered for enabling communication between the \gls{hil} system and a standalone \gls{sw} service: Flask and gRPC. Flask is a lightweight Python web framework that supports synchronous HTTP-based communication using REST APIs, making it suitable for simple interactions. In contrast, gRPC is a high-performance framework designed for more demanding scenarios, offering protocol buffer serialization, built-in streaming capabilities, and efficient bidirectional communication over HTTP/2. These features make gRPC particularly suitable for scalable and real-time system integration. As shown in table~\ref{tab:flask_grpc_comparison}, Flask offers a simpler setup and broad compatibility via HTTP, whereas gRPC provides faster communication and built-in support for streaming, making it more suitable for real time applications.
+
+\begin{table}[h!]
+    \centering
+    \caption{Comparison of Flask (REST) and gRPC Communication Frameworks}
+    \label{tab:flask_grpc_comparison}
+    \begin{tabularx}{\textwidth}{|l|X|X|}
+    \hline
+    \textbf{Feature} & \textbf{Flask (REST)} & \textbf{gRPC} \\
+    \hline
+    Protocol & HTTP/1.1 & HTTP/2 \\
+    \hline
+    Format & JSON (text-based) & Protocol Buffers (binary) \\
+    \hline
+    Speed & Slower (due to JSON) & Faster (binary, HTTP/2) \\
+    \hline
+    Streaming & Manual/limited & Built-in support \\
+    \hline
+    Language Support & Broad (via HTTP) & Broad (requires gRPC library) \\
+    \hline
+    Tooling Simplicity & Easier for quick setup & More complex setup \\
+    \hline
+    \end{tabularx}
+    \end{table}
+
+\section{Summary}
+This chapter explored the application of \gls{dl}-based \gls{od} techniques for motorbike \gls{db} \gls{sw} validation, with the goal of developing an automated testing environment. Traditional manual testing methods present significant limitations, including time inefficiency, high operational costs and susceptibility to human error. To address these challenges, the study investigated how \gls{od} techniques, supported by \gls{dl} algorithms and a \gls{cs} can be used in an automated testing environment using a \gls{hil} system to enhance the efficiency and the reliability of \gls{db} testing.
+
+A thorough review of \gls{od} techniques was conducted, outlining the shift from traditional methods, such as \gls{vj} and \gls{hog} to modern \gls{dl}-based techniques that uses \gls{cnn}s. These techniques include \gls{rcnn}, \gls{yolo} and \gls{ssd}. The advantages of \gls{dl}-based \gls{od} like higher accuracy, real-time processing capabilities and reduced dependency on handcrafted feature extraction, were highlighted in this chapter. Moreover, \gls{ds} preparation steps were also explored to provide a foundation for a systematic training and testing for the \gls{dl} model.
+
+Furthermore, the chapter examined the selection criteria for \gls{cs}s and their impact on \gls{od} model performance. Factors such as scanning method, resolution, \gls{dr}, sensor size and frame rate were analyzed to determine their influence on the detection algorithms. High-resolution and \gls{hdr}-capable cameras were found to provide improved detection performance, particularly in low-light or high-contrast conditions, this makes them suitable for \gls{db} \gls{sw} validation. Additionally, the area scan approach was found more suitable for real-time detection and the frame rate will only influence the project if real-time \gls{od} is required.
+
+The fundamental of \gls{hil} systems were discussed and its importance in embedded systems testing. Additionally, a concise comparison between \gls{mil}, \gls{sil}, \gls{pil} and \gls{hil} was created to highlight the advantages of using a \gls{hil} system for component and subsystem testing. Finally, integration techniques between \gls{hil} and standalone \gls{sw} services were explored, this includes Flask as an easy straightforward framework and gRPC as a more sophisticated and robust approach.
+
+To establish an effective automated testing setup, this study proposed integrating a \gls{hil} system with a \gls{cs} and a \gls{dl}-based \gls{od} algorithm. In this approach, the \gls{hil} system initializes the \gls{db} and controls the displayed view. It then triggers the \gls{cs} to capture and save an image of the actual \gls{db} view. Subsequently, the \gls{hil} system calls the \gls{dl} algorithm to start analyzing the view, extract all relevant assets and verify whether they match the expected output. This closed-loop system provides a systematic and scalable testing framework that ensures the \gls{db} software meets safety requirements.
+
+In the next chapter of this study, a custom dataset will be collected using photoshop files of the \gls{db} and then annotated to train \gls{dl} \gls{od} models. Furthermore, this models will be tested on real \gls{db} camera images. Additionally, a \gls{cs} will be selected according to the available budget and the selection criteria mentioned. Finally, an integration strategy between the \gls{cs}, the \gls{hil} and the \gls{od} algorithm will be implemented to allow for seamless operation.
 
