@@ -1248,6 +1248,62 @@
       \verb https://www.mathworks.com/discovery/hardware-in-the-loop-hil.html#1
       \endverb
     \endentry
+    \entry{Cognex_Camera}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=690de9a162c460abbc26442f306ca372}{%
+           family={Cognex},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{690de9a162c460abbc26442f306ca372}
+      \strng{fullhash}{690de9a162c460abbc26442f306ca372}
+      \strng{fullhashraw}{690de9a162c460abbc26442f306ca372}
+      \strng{bibnamehash}{690de9a162c460abbc26442f306ca372}
+      \strng{authorbibnamehash}{690de9a162c460abbc26442f306ca372}
+      \strng{authornamehash}{690de9a162c460abbc26442f306ca372}
+      \strng{authorfullhash}{690de9a162c460abbc26442f306ca372}
+      \strng{authorfullhashraw}{690de9a162c460abbc26442f306ca372}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-05-11}
+      \field{title}{Specifications for the In-Sight 9000 vision series}
+      \verb{urlraw}
+      \verb https://www.cognex.com/de-de/products/machine-vision/2d-machine-vision-systems/in-sight-9000-series/specifications
+      \endverb
+      \verb{url}
+      \verb https://www.cognex.com/de-de/products/machine-vision/2d-machine-vision-systems/in-sight-9000-series/specifications
+      \endverb
+    \endentry
+    \entry{Cognex_Com}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=690de9a162c460abbc26442f306ca372}{%
+           family={Cognex},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{690de9a162c460abbc26442f306ca372}
+      \strng{fullhash}{690de9a162c460abbc26442f306ca372}
+      \strng{fullhashraw}{690de9a162c460abbc26442f306ca372}
+      \strng{bibnamehash}{690de9a162c460abbc26442f306ca372}
+      \strng{authorbibnamehash}{690de9a162c460abbc26442f306ca372}
+      \strng{authornamehash}{690de9a162c460abbc26442f306ca372}
+      \strng{authorfullhash}{690de9a162c460abbc26442f306ca372}
+      \strng{authorfullhashraw}{690de9a162c460abbc26442f306ca372}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-06-2}
+      \field{title}{In-Sight Communications}
+      \verb{urlraw}
+      \verb https://support.cognex.com/docs/is_590/web/EN/ise/Content/Communications_Reference/In-SightCommunications.htm?tocpath=Communications%20Reference%7C_____0
+      \endverb
+      \verb{url}
+      \verb https://support.cognex.com/docs/is_590/web/EN/ise/Content/Communications_Reference/In-SightCommunications.htm?tocpath=Communications%20Reference%7C_____0
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
