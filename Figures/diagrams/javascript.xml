@@ -1,0 +1,68 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Photoshop JS Export Flow" id="script-flow">
+    <mxGraphModel dx="1104" dy="630" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="start" value="Start Script" style="ellipse;fillColor=#b4a7d6;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="20" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="loop" value="Loop over all icon layers" style="rounded=1;fillColor=#f9cb9c;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="100" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="hide" value="Hide all layers" style="rounded=1;fillColor=#f4cccc;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="180" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="show" value="Show selected layers" style="rounded=1;fillColor=#f4cccc;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="240" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="export" value="Export image" style="rounded=1;fillColor=#d9ead3;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="300" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rename" value="Name file using visible layers" style="rounded=1;fillColor=#d0e0e3;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="360" width="220" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="next" value="Next combination?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="260" y="420" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="end" value="End Script" style="ellipse;fillColor=#b4a7d6;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="520" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="e1" style="endArrow=block;" edge="1" parent="1" source="start" target="loop">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="endArrow=block;" edge="1" parent="1" source="loop" target="hide">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="endArrow=block;" edge="1" parent="1" source="hide" target="show">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="endArrow=block;" edge="1" parent="1" source="show" target="export">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="endArrow=block;" edge="1" parent="1" source="export" target="rename">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" style="endArrow=block;" edge="1" parent="1" source="rename" target="next">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="Yes" style="endArrow=block;" edge="1" parent="1" source="next" target="loop">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="No" style="endArrow=block;" edge="1" parent="1" source="next" target="end">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,16 +1,15 @@
 
 
 \chapter{Methodology} \label{ch:methodology}
-This chapter defines the methodology used to develop the framework for testing the \gls{db}. The chapter is divided into several sections, each focusing on a specific aspect of the methodology. The first section introduces the development process as a whole, including a detailed plan with measurable milestones to ensure a systematic and robust development. The  second section discusses the first milestone which describes the test setup, including \gls{cs}, \gls{sw} algorithm, and \gls{hil} system. The third section provides an overview of the \gls{ds} used for training and testing the model, including \gls{dc}, annotation, and preprocessing techniques. Furthermore it discusses the \gls{od} algorithm and its pipeline, including the selection of a pre-trained model and the training process. Finally, the fourth section covers integration techniques, including algorithm integration with \gls{cs} and synchronization with \gls{hil} system.
+This chapter defines the methodology used to develop the framework for testing the \gls{db}. The chapter is divided into several sections, each focusing on a specific aspect of the methodology. The first section introduces the development process as a whole, including a detailed plan with measurable milestones to ensure a systematic and robust development. The  second section discusses the first milestone which describes the test setup, including \gls{cs}, \gls{sw} algorithm, and \gls{hil} system integration. The third section provides an overview of the \gls{ds} used for training and testing the model, including \gls{dc}, annotation and preprocessing techniques. Furthermore it discusses the \gls{od} algorithm and its pipeline, including the selection of a pre-trained model and the training process. Finally, the fourth section covers the integration of the model in the framework, this includes preparing testing scenarios and executing them for conclusive results.
 
 \section{Introduction}
-
 The aim of this project is to develop a closed-loop framework to validate the \gls{db} \gls{sw} using a \gls{hil} system, a \gls{cs}, and a \gls{dl}-based model that can detect the \gls{db} assets. The working principle of the system is as follows:
 
 \begin{itemize}
     \item The \gls{hil} system controls the complete test process. It contains models of all the bike control units that communicate with the \gls{db}. Moreover, rider interactions can be simulated through CAN messages.
     \item The \gls{hil} initiates a test case by triggering a specific frame on the \gls{db} via CAN. For example, it can test whether the check engine icon appears when an engine fault message is sent.
-    \item After that, the \gls{hil} sends a request to the standalone \gls{sw}, which is connected to the \gls{cs}, to capture and analyze an image. This request includes a string that defines which dashboard assets are under test.
+    \item After that, the \gls{hil} sends a request to the standalone \gls{sw}, which is connected to the \gls{cs}, to capture and analyze an image. This request includes a string that defines which \gls{db} assets are under test.
     \item The \gls{sw} then triggers an image-capturing command to the \gls{cs} and retrieves the image for analysis.
     \item The retrieved image is analyzed using the trained \gls{dl} model, and all detected objects are compiled into a list. This list is then checked to see whether it includes the assets under test.
     \item Finally, a response is sent back to the \gls{hil}, which determines whether the test case passes or fails.
@@ -25,8 +24,7 @@ Figure \ref{proj_overview} shows a graphical overview of the connection between 
     \label{proj_overview}
 \end{figure}
 
-The methodology used in this project is divided into three main milestones.  
-The first milestone focuses on setting up the test environment. This includes selecting a suitable \gls{cs}, implementing light control, and integrating the \gls{hil} system. The goal is to create a fully functional closed-loop setup that can later be used to integrate the model and run detection tests.
+The methodology used in this project is divided into three main milestones. The first milestone focuses on setting up the test environment. This includes selecting a suitable \gls{cs}, implementing light control, and integrating the \gls{hil} system. The goal is to create a fully functional closed-loop setup that can later be used to integrate the model and run detection tests.
 
 The second milestone involves preparing a \gls{ds} in an automated way using Photoshop files. It includes image annotation, preprocessing, and augmentation to improve model generalization. Moreover, this stage includes training the selected \gls{od} model using the \gls{ds} and testing its performance on images captured from the \gls{cs}.
 
@@ -39,7 +37,7 @@ The test setup is an important part of the project as it provides the environmen
 \subsection{Camera System}
 To evaluate the \gls{db}, the test setup relies on the \gls{cs} to capture clear and accurate images. It should be able to capture high-resolution images with a wide \gls{fov} to ensure that all relevant dashboard elements are clearly visible in each frame. Since a dedicated light control system is used to ensure consistent lighting conditions, the camera does not need to be highly sensitive to light variations. This light control approach will be explained in more detail later in this chapter. Moreover, as the \gls{db} remains stationary during testing, motion blur sensitivity is not a critical requirement.
 
-Since a \gls{cs} was already available at KTM, it was recommended to use the existing system for this project. The chosen \gls{cs} is a high-resolution camera provided by Cognex, a company specializing in industrial-grade camera systems. This camera can capture images at a resolution of up to 12 megapixels (4096 × 3000), which is sufficient for the object detection (\gls{od}) model to accurately detect and classify dashboard elements \cite{Cognex_Camera}. Figure \ref{Cognex_Camera} shows the \gls{cs} used in the test setup.
+Since a \gls{cs} was already available at KTM, it was recommended to use the existing system for this project. The chosen \gls{cs} is a high-resolution camera provided by Cognex, a company specializing in industrial grade \gls{cs}. This camera can capture images at a resolution of up to 12 megapixels (4096 × 3000), which is sufficient for the object detection (\gls{od}) model to accurately detect and classify dashboard elements \cite{Cognex_Camera}. Figure \ref{Cognex_Camera} shows the \gls{cs} used in the test setup.
 
 \begin{figure}[!htb]
     \centering
@@ -50,7 +48,7 @@ Since a \gls{cs} was already available at KTM, it was recommended to use the exi
 
 Additionally, Cognex \gls{cs} is able to communicate with external devices over Ethernet networks or serial port connections using various protocols. This allows smooth integration with the \gls{sw}, enabling reliable image capture and retrieval using \gls{telnet} and \gls{ftp} protocols through the native mode communication. The Cognex native mode communication protocol is an ASCII-based command system used to remotely control Cognex sensors. It supports communication through custom PC applications, remote serial hosts, or \gls{telnet} over Ethernet. The protocol includes two types of commands: basic (short, two-character commands) and extended (with additional functionality). When a command is sent, the sensor processes it and replies with an ASCII response. Set commands return 1 for success, 0 for unrecognized commands, or a negative number for failure, while get commands return specific values based on the request \cite{Cognex_Com}. In this project the basic comands are sufficient since it is only required to trigger an image and retrieve it. 
 
-Set Event command was chosen to trigger an image cpaturing event, it triggers a specified event through a basic native mode command. A python code was created to trigger an image capturing using this command via \gls{telnet} and then retrieve it using \gls{ftp}, the flow chart of the code is in figure \ref{Image_capture_code}. The set Event command is SE8 baccording to Cognex documentation \cite{Cognex_Com}.
+Set Event command was chosen to trigger an image cpaturing event, it triggers a specified event through a basic native mode command. A python code was created to trigger an image capturing using this command via \gls{telnet} and then retrieve it using \gls{ftp}, the flow chart of the code is in figure \ref{Image_capture_code}. The Set Event command is SE8 according to Cognex documentation \cite{Cognex_Com}.
 
 \begin{figure}[!htb]
     \centering
@@ -98,13 +96,100 @@ The box provides a mounting structure for the \gls{cs} to ensure that the \gls{c
 
 
 \subsection{Hardware In The Loop System Integration}
+As mentioned earlier, the \gls{hil} system controls the entire test process. Therefore, it is essential to establish a smooth and reliable integration between the \gls{hil} and the other systems involved in testing. For this project, the Vector \gls{hil} was chosen, as it is already available at KTM and provides a comprehensive suite of software tools. These tools offer flexibility in building test cases using different approaches, ranging from simple sequences to more advanced testing scenarios.
 
+Additionally, the Vector toolchain supports the .NET framework for developing test cases. This is particularly useful, as it includes all the standard libraries needed for enabling HTTP communication between the \gls{hil} and external systems.
+
+Moreover, since the standalone \gls{sw} is developed in Python and the systems are designed to communicate synchronously, Flask was chosen as the main framework to manage communication between the components. Compared to other frameworks like gRPC, which require protocol buffer definitions and additional dependencies, Flask provides a much simpler setup. This makes it easier to integrate into the \gls{hil} development environment without the need to add external libraries or tools, resulting in a lightweight and maintainable solution.
+
+To achieve the goal of the first milestone, which is to develop a closed-loop test setup that is ready for model integration, it was decided to create a single Python function that handles the entire process. This function combines image acquisition, image analysis, and results comparison into one streamlined workflow. As a result, a Flask server can be built to expose just this single function, which is then triggered once by the \gls{hil}. The function executes the complete sequence and returns the final results. 
+
+To support this approach, the image acquisition process was encapsulated in a Python function called \texttt{capture\_and\_save\_image(filename)}. As explained earlier, this function captures an image, saves it under the given filename in the designated directory, and returns the full path to the saved image.
+
+In preparation to complete the first milestone, a second placeholder function was created: \texttt{start\_image\_analysis(image\_path)}. This function will later be developed to load the image from the provided path and use the trained model to detect all relevant \gls{db} elements. It will then store these elements in a list and return it for further evaluation.
+
+The third function, \texttt{compare\_results(detected\_elements, filename)}, takes the list of detected elements and the filename as inputs. The filename provided by the \gls{hil} includes the elements that needs to be verified. This function searches the list for the specified elements and returns \texttt{True} if the elements are found or \texttt{False} otherwise.
+
+Finally, all three functions are called in the mentioned sequence within a main function called \texttt{analyze\_image(filename)}. This function includes error handling and returns \texttt{1} if the comparison passes, \texttt{0} if it fails, and an error message if something goes wrong to provide clear feedback to be logged by the \gls{hil}. Figure \ref{analyze_image} provide a cleare schematic for the process flow of the main function.
+
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/diagrams/analyze_image.pdf}
+    \caption{Process flow of the \texttt{analyze\_image(filename)} function.}
+    \label{analyze_image}
+\end{figure}
+
+Once the main function was ready, the next step was to configure the network environment in which all devices would operate. Since all systems were connected to the same subnet, as shown in Figure \ref{Network}, it was possible to host the Flask application on IP address \texttt{192.168.100.50} using the standard Flask port \texttt{5000}. This allowed HTTP requests to be sent in the format: \texttt{http://192.168.100.50:5000/analyze\_image+filename}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/diagrams/Network.pdf}
+    \caption{Subnet which have all the devices connected on.}
+    \label{Network}
+\end{figure}
+
+On the \gls{hil} side, a test function was implemented using the .NET framework. This function takes a string input representing the filename, sends an HTTP request to the Flask application and waits for a response. If the response is positive, the test case is considered passed. This modular function can be integrated into any test scenario, making it possible to validate individual \gls{db} frames by simply passing the relevant elements in the string filename.
+
+The final step of the first milestone involved creating a test case that activates a combination of \gls{db} icons to simulate a real dashboard frame. This was implemented using the test table in vTESTstudio, as shown in Figure~\ref{Test_Case_1}. In this test case, four dashboard icons are turned on via CAN messages, followed by a call to the test function that sends the HTTP request to the Flask server. After a short wait, the icons are turned off again.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figures/Test_Case_1.png}
+    \caption{Example test case that turns on four \gls{db} icons, running analysis and turning them off again.}
+    \label{Test_Case_1}
+\end{figure}
+
+This step is a key foundation for the entire project workflow, as it demonstrates how any \gls{db} frame can be tested in the same structured way. With this setup in place, the system is now fully prepared to integrate the trained model and run real detection tests.
+
+The output of this milestone is an image of the \gls{db}, saved on the server computer and ready for analysis. An example of this captured image is shown in figure \ref{DB_4_raw}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/4.png}
+    \caption{Example \gls{db} camera image containing the four required icons.}
+    \label{DB_4_raw}
+\end{figure}
 
 
 \section{Object Detection Model}
-.........
+In this milestone, the main focus is on training a \gls{dl} model that can reliably and accurately detect \gls{db} elements. Due to time constraints, the project concentrates on a single class of \gls{db} elements, specifically the telltale icons. This category includes a set of ten icons that are selected for validation.
+
+To develop a working model, the process begins with preparing a suitable \gls{ds}. This includes \gls{dc}, images annotation, performing preprocessing steps and applying augmentation techniques to improve generalization.
+
+Once the \gls{ds} is ready, the training process begins. This involves selecting an appropriate model architecture from those described in the technical background chapter, training it on the prepared training \gls{ds} and evaluating its performance using the validation and test \gls{ds}. The final evaluation is performed using real camera images captured by the selected \gls{cs} to ensure the model performs well under actual testing conditions.
+
 \subsection{Dataset Preparation}
-.........
+The \gls{ds} preparation process consists of several steps, as outlined in the previous chapter. The first step is \gls{dc}. Since the \gls{db} needs to be validated during the development phase, it is essential to maintain a high level of privacy and control. Therefore, a private \gls{dc} approach was chosen for this project to ensure that the training images are both relevant and secure.
+
+At this stage, the actual \gls{sw} is still under development. However, Photoshop design files of the \gls{db} were already available. Based on these files, the training data was collected by exporting images that included all possible combinations of the selected telltale icons using a single background frame. Although it is possible to use different background frames, only one was selected for simplicity. This frame includes the most complex colors and visual elements, helping to train the model under the most challenging visual conditions.
+
+Using this setup, a total of one thousand and twenty-four unique images could be generated. However, exporting this number of frames manually is time-consuming and labor-intensive, which would be impractical in a real development environment. To address this, Adobe Photoshop built in automation capabilities were used. A JavaScript script was developed to automate the process of hiding and showing the telltale icon layers in the correct sequence and exporting each image. The script also assigned each image a filename that includes the names of the visible icons. For example, an image showing \gls{abs} and engine icons would be saved as \texttt{ABS\_Engine.png}. This naming format simplifies the annotation process, which will be discussed further in this section.
+
+After collecting the data, the annotation process begins. As mentioned in the previous chapter, this step is often the most time-consuming and most prone to error. For that reason, automating it is highly beneficial, as it helps avoid spending weeks of company resources manually drawing bounding boxes around important icons.
+
+Since the \gls{ds} was created by exporting images from Photoshop files, the positions of the icons and other assets are fixed whenever they are present. Additionally, the visible icons are listed in the filename, as described earlier. By combining these two factors, it became clear that a Python script could be used to automate the annotation process. The script reads the icon names from the filename, retrieves the corresponding predefined positions, and generates an annotation file for that specific image. The output is saved in the labels directory using the same filename as the image, ensuring it can be easily matched later during training.
+
+For example, if an image contains the icons for oil, engine, and \gls{abs}, the script creates a text file like the one shown in Figure \ref{oil_engine_abs_txt}. Each line in the file corresponds to a detected object and includes the class ID (such as six for oil and zero for \gls{abs}), followed by normalized values for the bounding box center coordinates (x, y), width, and height. The annotation format depends on the chosen architecture which will be discussed further in this chapter. However, once one format was created, it could be transformed easily in differant formats if differantarchitecture is chosen later. At this stage, \gls{yolo} text file format was chosen because it is the easiest and most likely to be used.
+
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/Oil_Engine_ABS.png}
+    \caption{Example of a \gls{yolo} annotation text file for an image containing oil, engine and \gls{abs} icons}
+    \label{oil_engine_abs_txt}
+\end{figure}
+
+After the annotation of the \gls{ds} was completed, it was important to ensure that the image size matched the expected input dimensions of the selected model architecture. Most modern architectures typically accept input images of size $640 \times 640$.
+
+Additionally, the images exported from the Photoshop files are of much higher quality and clarity compared to those that will be captured by the \gls{cs}. This difference in quality can cause the model to overfit on the training \gls{ds}, making it less effective at detecting icons in real test scenarios.
+
+To address these issues, image preprocessing techniques such as resizing are necessary to match the model’s input size. Furthermore, image augmentation techniques like random rotation and the addition of random noise help reduce the artificial sharpness of the training images, allowing the model to generalize better.
+
+One of the main challenges in applying such techniques is the need to adjust the bounding boxes accordingly after transformations. However, modern tools such as Roboflow solve this problem efficiently. Roboflow is a platform that supports the management, annotation, augmentation, and export of \gls{ds} for training \gls{ml} models. It can apply preprocessing and augmentation steps while preserving the correct bounding box locations for each asset. In addition, it provides export options in various formats compatible with widely used architectures.
+
+"Ceate a summary diagram for the ds preparation step and transition to model selection and training"
+
 \subsection{Model Training}
 .........
 \subsection{Model Testing}

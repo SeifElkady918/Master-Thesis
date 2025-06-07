@@ -1,0 +1,68 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Analyze Image Flowchart" id="flow1">
+    <mxGraphModel dx="1212" dy="631" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="flask" value="Flask Trigger (HTTP Request)" style="rounded=1;fillColor=#d5a6bd;strokeColor=#000000;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="20" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="capture" value="capture_and_save_image(filename)" style="rounded=1;fillColor=#ffe599;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="100" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="analyze" value="start_image_analysis(image_path)" style="rounded=1;fillColor=#b4a7d6;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="180" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="compare" value="compare_results(detected_elements, filename)" style="rounded=1;fillColor=#ffe599;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="260" width="250" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="decision" value="Is element found?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#b6d7a8;" vertex="1" parent="1">
+          <mxGeometry x="180" y="340" width="140" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="yes" value="Return 1" style="rounded=1;fillColor=#a2c4c9;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="100" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="no" value="Return 0" style="rounded=1;fillColor=#a2c4c9;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="440" width="100" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="error" value="Return error message" style="rounded=1;fillColor=#f4cccc;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="520" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e1" style="endArrow=block;" edge="1" parent="1" source="flask" target="capture">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="endArrow=block;" edge="1" parent="1" source="capture" target="analyze">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="endArrow=block;" edge="1" parent="1" source="analyze" target="compare">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="endArrow=block;" edge="1" parent="1" source="compare" target="decision">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="Yes" style="endArrow=block;" edge="1" parent="1" source="decision" target="yes">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="No" style="endArrow=block;" edge="1" parent="1" source="decision" target="no">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" style="endArrow=block;" edge="1" parent="1" source="yes" target="error">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" style="endArrow=block;" edge="1" parent="1" source="no" target="error">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

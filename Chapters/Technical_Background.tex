@@ -437,8 +437,6 @@ Depending on the form of the \gls{ds}, there are various data annotation methods
     \label{OD_Labeling}
 \end{figure}
 
-
-
 \subsubsection{Dataset Preprocessing}
 \gls{ds} preprocessing is the steps taken to format images before they are used by model training and inference. This includes, but is not limited to, resizing, orienting, and color corrections. Image preprocessing may also decrease model training time and increase model inference speed. If input images are particularly large, reducing the size of these images will dramatically improve model training time without significantly reducing model performance \cite{Preprocessing_Augmentation}.
 
@@ -449,7 +447,6 @@ Identifying the correct preprocessing steps for increasing model performance req
     \item Resize: Many model architectures require the input image to be square in shape, but few devices capture perfectly square images. Therefor, altering an image to be a square is essential, and this is done by either stretching the image dimensions to fit to be a square or keeping its aspect ratio constant and filling in newly created dead space with new pixels, commonly using black pixels \cite{Preprocessing_Augmentation}.
     \item Orientation: When an image is captured, it often includes metadata which indicates how the image should be displayed relative to how it is stored on disk, this metadata is called the EXIF orientation tag. This detail is crucial during preprocessing, as it ensures that the image is interpreted correctly by both humans and machines. If annotated bounding boxes are created based on the assumed orientation, but the model receives the image in a different orientation due to ignored EXIF data, the model will learn incorrect spatial relationship. Therefore, proper handling of image orientation during preprocessing is essential to maintain annotation accuracy and to ensure the model is trained on consistently aligned input data \cite{Preprocessing_Augmentation}.
 \end{itemize}
-
 
 \subsubsection{Dataset Augmentation}
 \gls{ds} augmentation are manipulations applied to images to create different versions of similar content in order to expose the model to a wider variety of training examples. For example, randomly altering rotation, brightness, or scale of an input image requires that a model consider what an image subject looks like in a variety of situations. Image augmentation manipulations are forms of image preprocessing, but there is a critical difference: while image preprocessing steps are applied to training and test sets, image augmentation is only applied to the training data. Thus, a transformation that could be an augmentation in some situations may best be a preprocessing step in others \cite{Preprocessing_Augmentation}.
@@ -463,7 +460,6 @@ Augmentation is a process that happens after preprocessing and could be defined 
     \item Random Rotations: Image rotation is a valuable augmentation technique, especially when models are deployed in environments with variable orientations, such as mobile applications. It helps the model generalize across different viewing angles. However, rotation can be complex to implement, as it introduces empty or dead pixels around the edges and requires adjustments to bounding boxes using trigonometry. Rotation is most beneficial when object orientation is expected to vary, but less appropriate for tasks involving consistently aligned content, such as screenshots \cite{Preprocessing_Augmentation}.
     \item Random Noise: Adding noise to images, such as through salt and pepper noise, where random pixels are turned completely black or white is a useful augmentation strategy to combat overfitting. While noise may reduce training accuracy, it can encourage the model to focus on meaningful features rather than spurious image artifacts. This technique is especially beneficial when a model shows signs of overfitting to irrelevant visual details \cite{Preprocessing_Augmentation}.
 \end{itemize}
-
 
 \subsection{Conclusion}
 The evolution of \gls{od} techniques from traditional \gls{ml} methods to modern \gls{dl} approaches has revolutionized the field. \gls{dl}-based detectors have significantly improved the accuracy, efficiency and adaptability of \gls{od} systems. This revolution has opened new possibilities in different fields. Traditional methods like \gls{hog} and \gls{dpm} have been replaced by more sophisticated models like \gls{rcnn}, \gls{ssd} and \gls{yolo}, which offer better performance and faster processing speeds. Moreover, they are easier to implement, available in wider range and more scalable. In order to use these techniques properly, a \gls{ds} needs to be prepared, this includes \gls{dc}, annotation, preprocessing and augmentation. Furthermore, when merging these techniques with the right \gls{cs} and the right environmental setup, the results can be very promising. The next section will discuss the selection criteria of camera systems and how to choose the right one for a specific project.
@@ -577,7 +573,7 @@ The authors claimed that high frame rates play a crucial role in real-time \gls{
 
 In an application such as \gls{db} testing where objects and texts are stationary for the current generation, it is not necessary to consider such a parameter when choosing a CS. However, it is expected to have more animations and graphics in the future generations of \gls{db}, that is why it could be a good investment to include such a parameter in the decision making process if the resources allow.
 
-\subsection{Summary}
+\subsection{Conclusion}
 It is essential to select the correct \gls{cs} when developing an \gls{od} project, as it can highly influence the results, as discussed earlier. Based on the project requirements, different factors should be considered when choosing the \gls{cs}. The scanning method determines how images are captured. Line scan cameras can be suitable for high speed applications like in production lines. On the other hand, area scan cameras excel in real-time \gls{od}. Moreover, resolution of the \gls{cs} is another important parameter to consider. When resolution increases, more details could be captured and better detection performance could be achieved. However, this comes at the cost of increased computational power, higher resolutions demand greater computational resources. \gls{dr} can highly impact the models performance especially in challenging light conditions. It was found that \gls{hdr} can result in better performance than \gls{sdr}. Additionally, sensor size can also influence the performance of the \gls{od} model, where larger sensors can either increase resolution or enhance low-light performance. The final parameter to consider is frame rate. Frame rate is crucial for real-time detection, as higher \gls{fps} helps minimize motion blur. A well-balanced selection of these parameters ensures an optimal \gls{cs} for \gls{dl} applications.
 
 Having established the importance of selecting appropriate \gls{dl} models and \gls{cs}, the discussion now shifts to how these components can be used within a structured and efficient testing framework. \gls{hil} systems provide a powerful solution for simulating real-world environments and validating the embedded systems under controlled conditions. The following section outlines the fundamental principles of \gls{hil} systems, highlights their advantages and explains how they can be integrated with \gls{dl} models and \gls{cs} to perform automated and repeatable testing processes.
@@ -587,7 +583,7 @@ Having established the importance of selecting appropriate \gls{dl} models and \
 
 In this section, the concept of \gls{hil} systems will be examined in detail. The discussion begins with an overview of how \gls{hil} simulation works, followed by a comparison between \gls{mil}, \gls{sil}, \gls{pil}, and \gls{hil} approaches. Finally, integration techniques between \gls{hil} platform and other software services will be presented. This overview highlights the role of \gls{hil} systems in creating efficient, scalable and reliable testing environments for the \gls{db}.
 
-\subsection{Fundamentals of Hardware in the Loop Simulation}
+\subsection{Fundamentals Of Hardware In The Loop Simulation}
 \gls{hil} simulation works by connecting real controller hardware to a simulated version of the physical system, also called the plant. This connection uses both analog and digital actual \gls{io} signals to let the controller interact with the virtual environment as if it was real. These connections often include communication protocols like UDP, TCP, CAN or other standards used in specific industries. Having real-world communication interfaces with correct settings, timing, and wiring is a key part of making \gls{hil} testing realistic and reliable \cite{HiL_Testing}. Figure \ref{HiL_Setup} shows a typical \gls{hil} setup.
 
 \begin{figure}[!ht]
@@ -601,7 +597,7 @@ In this section, the concept of \gls{hil} systems will be examined in detail. Th
 
 Throughout the process, the system collects data from both the controller and the simulated plant to provide feedback and adjust responses in real time. This setup allows engineers to run a variety of tests including normal operations and fault conditions to make sure the control algorithms perform reliably and meet the required standards \cite{HiL_Testing}.
 
-\subsection{ Comparison of Testing Approaches}
+\subsection{Comparison Of Testing Approaches}
 \gls{mil}, \gls{sil}, \gls{pil} and \gls{hil} are key techniques used in the verification and validation process of embedded systems. Each technique serves a different purpose in the development cycle, with different fidelities of the simulation environment \cite{HiL_Testing}.
 
 \begin{itemize}
