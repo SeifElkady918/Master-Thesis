@@ -26,11 +26,19 @@
 \usepackage{tabularx}
 
 \usepackage{listings}
-\lstset{breaklines=true,
-        basicstyle=\ttfamily,
-        breakatwhitespace=false,
-        breakautoindent=true}
-
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{teal},
+    showstringspaces=false,
+    frame=single,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=false,
+    breakautoindent=true}
+    
 % Hyperlinks and Cross-References
 \usepackage{hyperref}
 \hypersetup{
@@ -50,3 +58,5 @@
 
 \setlength{\glslistdottedwidth}{0.4\linewidth} 
 \setlength{\glsdescwidth}{0.5\linewidth} % Adjusts description width
+
+\usepackage{xcolor}

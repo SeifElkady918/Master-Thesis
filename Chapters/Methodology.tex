@@ -59,12 +59,6 @@ Set Event command was chosen to trigger an image capaturing event, it triggers a
 
 Error handling and fallback scenarios were considered when designing the function for further integration in the complete architecture. Later in this chapter this function will be used as a first step when the \gls{hil} requests an image analysis from the standalone \gls{sw}.
 
-
-
-
-
-
-
 \subsection{Light Control}
 To ensure that the \gls{cs} captures images under controlled optimum lighting conditions, a light control system is an essential part of the test setup. This is important for the performance of the \gls{od} model, as variations in lighting can significantly affect the quality of the detection model. The light control system should prevent any external light sources from interfering with the captured images, this is important to ensure that no glare or reflections are present in the images, which can lead to false detections or misclassifications.
 
@@ -92,8 +86,6 @@ The box provides a mounting structure for the \gls{cs} to ensure that the \gls{c
     \caption{\gls{db} mounted inside the light control box.}
     \label{db_Mounting}
 \end{figure}
-
-
 
 \subsection{Hardware In The Loop System Integration}
 As mentioned earlier, the \gls{hil} system controls the entire test process. Therefore, it is essential to establish a smooth and reliable integration between the \gls{hil} and the other systems involved in testing. For this project, the Vector \gls{hil} was chosen, as it is already available at KTM and provides a comprehensive suite of software tools. These tools offer flexibility in building test cases using different approaches, ranging from simple sequences to more advanced testing scenarios.
@@ -195,16 +187,119 @@ One of the main challenges in applying such techniques is the need to adjust the
 \end{figure}
 
 \subsection{Model Training}
-.........
-\subsection{Model Testing}
-.........
+After completing the preparation of the \gls{ds}, the process of selecting and training the model begins. As mentioned in the technical background chapter, the two main types of detectors to choose from are one stage detectors and two stage detectors. Since the new generation of KTM \gls{db} includes many animations that will need to be tested in the future, it was important to consider scalability when choosing the detector. For that reason, a one stage detector was selected, even though the current \gls{db} version only involves static frames.
+
+Among the available options, the \gls{yolo}v11 detector was found to be suitable, as it demonstrates strong performance, as shown in Figure \ref{yolo_comparison}. \gls{yolo}v11 provides an excellent balance between inference speed and accuracy across various model sizes. All \gls{yolo}v11 variants, ranging from nano to extra large, outperform previous \gls{yolo} versions and other state-of-the-art detectors in both accuracy and latency, which supports its selection for this study.
+
+The performance of the model is evaluated using the \gls{map} metric. Specifically, the \textit{\gls{map}}$_{50-95}^{val}$ score is used, which calculates the average precision across ten different intersection over union thresholds ranging from fifty percent to ninety five percent, in steps of five. This provides a more comprehensive measure of how well the model detects and localizes objects, compared to simpler metrics that use only one threshold.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Figures/performance-comparison.png}
+    \caption{Comparison of \gls{od} models in terms of COCO \textit{\gls{map}}$_{50-95}^{val}$ accuracy versus inference latency using TensorRT10 FP16 on an NVIDIA T4 GPU. \gls{yolo}v11 outperforms all previous \gls{yolo} versions and competing models such as PP-\gls{yolo}E+, \gls{yolo}X, and EfficientDet, achieving superior accuracy while maintaining low latency.}
+    \label{yolo_comparison}
+\end{figure}
+
+Once the model was selected, the next step was to install and train it on the prepared \gls{ds}. \gls{yolo} is developed and provided by Ultralytics, an \gls{ai} company known for building state-of-the-art computer vision tools and models \cite{ultralytics}. The training process is initiated by calling the \texttt{train()} method on the loaded \gls{yolo} model as shown in Listing~\ref{lst:yolo_train}. This method accepts a number of parameters that control how training is performed on the given \gls{ds}. Each parameter is described below:
+
+\begin{itemize}
+  \item \texttt{data}: Specifies the path to the dataset configuration file (in YAML format), which defines the locations of the training, validation and testing images, the class names and the number of classes. This file is provided in the exported \gls{ds} folder provided by Roboflow.
+
+  \item \texttt{epochs}: Indicates how many complete passes the model will make over the training dataset. For example, a value of twenty means the model will go through the entire dataset twenty times unless early stopping is triggered.
+
+  \item \texttt{batch}: Sets the batch size, which determines how many images are processed simultaneously during training. A smaller batch size such as eight may be required when GPU memory is limited.
+
+  \item \texttt{imgsz}: Defines the size of the input images. All images are resized to (640 x 640) pixels to standardize the input size and reduce computational load.
+
+  \item \texttt{plots}: When enabled, this parameter generates performance plots such as loss curves and precision-recall graphs at the end of training.
+
+  \item \texttt{verbose}: Enables detailed output in the console to help monitor training progress and debugging.
+
+  \item \texttt{lr0}: Sets the initial learning rate, which influences how much the model updates its weights during training. A value of zero point zero zero five is relatively conservative and helps prevent large, unstable updates.
+
+  \item \texttt{optimizer}: Specifies the optimization algorithm used during training. \texttt{Adam} is a commonly used adaptive optimizer that performs well in computer vision tasks by adjusting learning rates automatically.
+
+  \item \texttt{patience}: Enables early stopping by ending training if the validation performance does not improve after a certain number of epochs. In this case, training will stop if there is no improvement after five consecutive epochs.
+
+  \item \texttt{val}: Ensures that the model is evaluated on the validation set after each epoch, which is critical for tracking performance and triggering early stopping if needed.
+\end{itemize}
 
 
+\begin{lstlisting}[caption={Y\gls{yolo}v11 training code snippet}, label={lst:yolo_train}]
+    from ultralytics import YOLO
+    
+    # Load a pretrained or custom YOLO model
+    model = YOLO("yolov11s.pt") 
+    
+    # Train the model
+    model.train(
+        data="datasets/Yolo_Trial_2-1/data.yaml",
+        epochs=20,
+        batch=8,
+        imgsz=640,
+        plots=True,             # Save training plots
+        verbose=True,           # Live logs
+        lr0=0.005,              # Learning rate
+        optimizer="Adam",       # Optimizer
+        patience=5,             # Stop if val loss doesn't improve for 5 epochs
+        val=True,               # Enable validation after each epoch
+    )
+\end{lstlisting}
+
+The output of the training process is a model that has been trained, validated and tested on the custom-made \gls{ds}. The result is saved in a file with the \texttt{.pt} extension. In Ultralytics \gls{yolo} models, a \texttt{.pt} file is a PyTorch-based format that contains the trained model, including its architecture, learned weights, training metadata such as optimizer state and epoch, as well as class label mappings. This file can be used for multiple purposes, such as running inference to make predictions, applying transfer learning by fine-tuning the model on new datasets or resuming training from a previous checkpoint.
+
+Later, this model will be used in the \texttt{start\_image\_analysis(image\_path)} function by calling the \texttt{predict()} method provided by Ultralytics. This method performs inference on the given image and returns the detected results. The output includes bounding boxes, class identifications and confidence scores for each detected object. Moreover, the complete model integration and the system pipeline is discussed in the next section.
 
 \section{System Integration}
-.........
+The third milestone of this project is to bring everything together to achieve robust operation of the \gls{db} testing environment. In this milestone, the trained model is integrated into the placeholder method \texttt{start\_image\_analysis(image\_path)}. Additionally, the complete system pipeline is finalized, covering everything from test case triggering to result evaluation, in order to enable a fully automated and scalable testing workflow.
+
 \subsection{Model Integration}
-.........
+As mentioned earlier, the resulting model is saved with the \texttt{.pt} extension, and the training function stores the best-performing model as \texttt{best.pt}. This file is placed in the project directory and is later used to run inference on the images captured by the \gls{db} camera.
+
+Figure~\ref{run_image_analysis} shows a flowchart that illustrates how \texttt{start\_image\_analysis(image\_path)} function operates after the model has been integrated. The function begins by loading the trained \gls{yolo} model from the \texttt{.pt} file. It then runs \gls{od} on the given image using a confidence threshold of zero point seven. After detection, it extracts the class names from the results and compiles them into a list. This list is returned to the caller for further evaluation.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Figures/diagrams/run_image_analysis.pdf}
+    \caption{Process overview of image analysis function using the trained \gls{yolo}v11 model.}
+    \label{run_image_analysis}
+\end{figure}
+
+The function runs the detection using the \texttt{predict} function provided by Ultralytics. As shown in Listing~\ref{lst:model_predict_only}, the trained model is first loaded from the \texttt{best.pt} file. Then, the \texttt{predict} method is called with the input image path and a confidence threshold of zero point seven. The \texttt{save} option is enabled to store the result image with the drawn bounding boxes. Additionally, the confidence value of zero point seven was selected to filter out low confidence detections and reduce the number of false positives. This value ensures that only predictions with a high certainty are considered during evaluation.
+
+\begin{figure}
+    \begin{lstlisting}[language=Python, caption={Running model prediction on a given image using Ultralytics functions}, label={lst:model_predict_only}]
+        # Load the trained YOLO model
+        model = YOLO("best.pt")
+    
+        results = model.predict(
+            source=image_path,
+            conf=0.7,
+            save=True,
+        )
+    \end{lstlisting}
+\end{figure}
+
+
+
+
 \subsection{Data Flow And Processing Pipeline}
-.........
+
+This subsection outlines the complete data flow and processing pipeline for the \gls{db} test environment. Figure~\ref{Complete_process} illustrates the entire workflow, showing the interaction between components and the flow of data throughout the test execution process.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/diagrams/Complete_Process (1).pdf}
+    \caption{Overview of the complete data flow and processing pipeline used in the \gls{db} test environment.}
+    \label{Complete_process}
+\end{figure}
+
+The interaction begins on the \gls{hil}, which starts the test case and sets the \gls{db} frame under test by sending the appropriate CAN messages. Once the frame is active, the \gls{hil} sends an HTTP request to the using Flask to the standalone \gls{sw} to trigger the \texttt{analyze\_image(filename)} function.
+
+The request starts a sequence steps. First, the \texttt{capture\_and\_save\_image(filename)} function commands the \gls{cs} via \gls{telnet} to capture an image and download it to the directory using \gls{ftp}. The saved image path is then passed to the next function which is \texttt{start\_image\_analysis(image\_path)}, where the trained \gls{yolo} model is loaded and used to detect visible elements. Additionally, it extracts the elements names and add them to a list to simplifies the comparing process.
+
+Next, the \texttt{compare\_results(detected\_elements, filename)} function compares the detected elements from the list with the expected elements indicated by the filename. If the elements are found, the function returns a value of one, otherwise, it returns zero. This result is sent back to the \gls{hil} through the Flask response to conclude the test case.
+
+This process could then be used with differant combinations of \gls{db} telltale icons and run multiple times to perform a conclusive automated testing of this class in the \gls{db} \gls{sw}. Moreover, the results of running this test case is discussed in the results chapter. Additionally, the results of the model training and testing are also documented in the next chapter. 
+
 

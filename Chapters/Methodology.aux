@@ -36,12 +36,21 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces A summary on the \gls {ds} preparation process.}}{60}{figure.caption.54}\protected@file@percent }
 \newlabel{DS_Prep}{{3.12}{60}{A summary on the \gls {ds} preparation process}{figure.caption.54}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Model Training}{60}{subsection.3.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Model Testing}{60}{subsection.3.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}System Integration}{60}{section.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Model Integration}{60}{subsection.3.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Data Flow And Processing Pipeline}{60}{subsection.3.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Comparison of \gls {od} models in terms of COCO \textit  {\gls {map}}$_{50-95}^{val}$ accuracy versus inference latency using TensorRT10 FP16 on an NVIDIA T4 GPU. \gls {yolo}v11 outperforms all previous \gls {yolo} versions and competing models such as PP-\gls {yolo}E+, \gls {yolo}X, and EfficientDet, achieving superior accuracy while maintaining low latency.}}{61}{figure.caption.55}\protected@file@percent }
+\newlabel{yolo_comparison}{{3.13}{61}{Comparison of \gls {od} models in terms of COCO \textit {\gls {map}}$_{50-95}^{val}$ accuracy versus inference latency using TensorRT10 FP16 on an NVIDIA T4 GPU. \gls {yolo}v11 outperforms all previous \gls {yolo} versions and competing models such as PP-\gls {yolo}E+, \gls {yolo}X, and EfficientDet, achieving superior accuracy while maintaining low latency}{figure.caption.55}{}}
+\newlabel{lst:yolo_train}{{3.1}{62}{Y\gls {yolo}v11 training code snippet}{lstlisting.3.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}{\ignorespaces Y\gls {yolo}v11 training code snippet}}{62}{lstlisting.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}System Integration}{63}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Model Integration}{63}{subsection.3.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Process overview of image analysis function using the trained \gls {yolo}v11 model.}}{64}{figure.caption.56}\protected@file@percent }
+\newlabel{run_image_analysis}{{3.14}{64}{Process overview of image analysis function using the trained \gls {yolo}v11 model}{figure.caption.56}{}}
+\newlabel{lst:model_predict_only}{{3.2}{64}{Running model prediction on a given image using Ultralytics functions}{lstlisting.3.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}{\ignorespaces Running model prediction on a given image using Ultralytics functions}}{64}{lstlisting.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Data Flow And Processing Pipeline}{64}{subsection.3.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Overview of the complete data flow and processing pipeline used in the \gls {db} test environment.}}{65}{figure.caption.58}\protected@file@percent }
+\newlabel{Complete_process}{{3.15}{65}{Overview of the complete data flow and processing pipeline used in the \gls {db} test environment}{figure.caption.58}{}}
 \@setckpt{chapters/Methodology}{
-\setcounter{page}{61}
+\setcounter{page}{67}
 \setcounter{equation}{0}
 \setcounter{enumi}{4}
 \setcounter{enumii}{0}
@@ -56,7 +65,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{12}
+\setcounter{figure}{15}
 \setcounter{table}{0}
 \setcounter{lofdepth}{1}
 \setcounter{lotdepth}{1}
@@ -66,11 +75,11 @@
 \setcounter{subtable}{0}
 \setcounter{currfiledepth}{0}
 \setcounter{parentequation}{0}
-\setcounter{lstnumber}{1}
+\setcounter{lstnumber}{9}
 \setcounter{section@level}{0}
 \setcounter{Item}{12}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{42}
+\setcounter{bookmark@seq@number}{41}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}
 \setcounter{tabx@nest}{0}
@@ -82,7 +91,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{160}
+\setcounter{instcount}{161}
 \setcounter{maxnames}{2}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -187,5 +196,5 @@
 \setcounter{smartand}{1}
 \setcounter{bbx:relatedcount}{0}
 \setcounter{bbx:relatedtotal}{0}
-\setcounter{lstlisting}{0}
+\setcounter{lstlisting}{2}
 }
