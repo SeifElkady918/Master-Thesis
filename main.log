@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.11)  10 JUN 2025 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.11)  14 JUN 2025 18:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -904,7 +904,7 @@ Package biblatex Info: Reference segment=0 on input line 11.
 
  (./Chapters/Results.tex
 Chapter 1.
-)
+
 
 [1
 
@@ -913,6 +913,51 @@ Chapter 1.
 
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+<Figures/Results/Graphs/5_Epochs/class_loss_plot.png, id=37, 722.7pt x 433.62pt>
+File: Figures/Results/Graphs/5_Epochs/class_loss_plot.png Graphic file (type png)
+<use Figures/Results/Graphs/5_Epochs/class_loss_plot.png>
+Package pdftex.def Info: Figures/Results/Graphs/5_Epochs/class_loss_plot.png  used on input line 20.
+(pdftex.def)             Requested size: 294.42636pt x 176.65393pt.
+<Figures/Results/Graphs/20_Epochs/class_loss_plot.png, id=39, 722.7pt x 433.62pt>
+File: Figures/Results/Graphs/20_Epochs/class_loss_plot.png Graphic file (type png)
+<use Figures/Results/Graphs/20_Epochs/class_loss_plot.png>
+Package pdftex.def Info: Figures/Results/Graphs/20_Epochs/class_loss_plot.png  used on input line 29.
+(pdftex.def)             Requested size: 294.42636pt x 176.65393pt.
+<Figures/Results/Graphs/50_Epochs/class_loss_plot.png, id=40, 722.7pt x 433.62pt>
+File: Figures/Results/Graphs/50_Epochs/class_loss_plot.png Graphic file (type png)
+<use Figures/Results/Graphs/50_Epochs/class_loss_plot.png>
+Package pdftex.def Info: Figures/Results/Graphs/50_Epochs/class_loss_plot.png  used on input line 38.
+(pdftex.def)             Requested size: 294.42636pt x 176.65393pt.
+<Figures/Results/Graphs/Test/confusion_matrix.png, id=47, 867.24pt x 650.43pt>
+File: Figures/Results/Graphs/Test/confusion_matrix.png Graphic file (type png)
+<use Figures/Results/Graphs/Test/confusion_matrix.png>
+Package pdftex.def Info: Figures/Results/Graphs/Test/confusion_matrix.png  used on input line 57.
+(pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
+<Figures/Results/Graphs/Test/8_bmp.rf.8110c0e7d7a1723405054135cabc6cbf.jpg, id=50, 1382.16376pt x 885.3075pt>
+File: Figures/Results/Graphs/Test/8_bmp.rf.8110c0e7d7a1723405054135cabc6cbf.jpg Graphic file (type jpg)
+<use Figures/Results/Graphs/Test/8_bmp.rf.8110c0e7d7a1723405054135cabc6cbf.jpg>
+Package pdftex.def Info: Figures/Results/Graphs/Test/8_bmp.rf.8110c0e7d7a1723405054135cabc6cbf.jpg  used on input line 65.
+(pdftex.def)             Requested size: 362.37569pt x 232.10626pt.
+)
+
+[2]
+
+LaTeX Warning: Text page 3 contains only floats.
+
+
+Overfull \vbox (0.20761pt too high) has occurred while \output is active []
+
+
+
+[3 <./Figures/Results/Graphs/5_Epochs/class_loss_plot.png> <./Figures/Results/Graphs/20_Epochs/class_loss_plot.png> <./Figures/Results/Graphs/50_Epochs/class_loss_plot.png>]
+
+LaTeX Warning: Text page 4 contains only floats.
+
+
+
+[4 <./Figures/Results/Graphs/Test/confusion_matrix.png> <./Figures/Results/Graphs/Test/8_bmp.rf.8110c0e7d7a1723405054135cabc6cbf.jpg>]
+
+[5]
 
 LaTeX Warning: Empty bibliography on input line 31.
 
@@ -927,19 +972,25 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B8B710A5C50A9E00E3AD9FAAE648F02C;78.
+(rerunfilecheck)             Checksum: 5549D408190A85AE6A9E483ADB0DDC8F;438.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30250 strings out of 473189
- 550009 string characters out of 5719958
- 1421656 words of memory out of 5000000
- 53158 multiletter control sequences out of 15000+600000
- 561445 words of font info for 40 fonts, out of 8000000 for 9000
+ 30333 strings out of 473189
+ 552921 string characters out of 5719958
+ 1428476 words of memory out of 5000000
+ 53227 multiletter control sequences out of 15000+600000
+ 563759 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,5n,96p,2450b,854s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,8n,96p,2450b,854s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{glo:cs} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:ds} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{glo:hil} has been referenced but does not exist, replaced by a fixed one
 
@@ -952,11 +1003,11 @@ pdfTeX warning (dest): name{glo:db} has been referenced but does not exist, repl
 
 pdfTeX warning (dest): name{glo:dl} has been referenced but does not exist, replaced by a fixed one
 
-<c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (1 page, 31520 bytes).
+<c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (5 pages, 559672 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 9 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 104 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
+ 50 words of extra memory for PDF output out of 10000 (max. 10000000)
 
